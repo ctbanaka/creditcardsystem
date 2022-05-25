@@ -14,9 +14,10 @@ import javax.persistence.Table;
 @Table(name="userregistration")
 public class UserRegistration {
 	@Id
-	@SequenceGenerator(name="userid",initialValue=1000,
+	@SequenceGenerator(name="userid_seq",initialValue=1000,
 	sequenceName="userid_seq_gen",allocationSize=1)
-	@GeneratedValue(generator="userid",strategy=GenerationType.SEQUENCE)
+	@GeneratedValue(generator="userid_seq",strategy=GenerationType.SEQUENCE)
+	@Column(name="userid")
     private int userID;
 	@Column(name="firstname", length=30, nullable=false)
     private String firstname;
@@ -30,4 +31,48 @@ public class UserRegistration {
     private String email;
 	@Column(name="password",length=12)
     private String password;
+	
+	
+	public int getUserID() {
+		return userID;
+	}
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+	public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	public Date getDateofbirth() {
+		return dateofbirth;
+	}
+	public void setDateofbirth(Date dateofbirth) {
+		this.dateofbirth = dateofbirth;
+	}
+	public long getPhoneno() {
+		return phoneno;
+	}
+	public void setPhoneno(long phoneno) {
+		this.phoneno = phoneno;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }
