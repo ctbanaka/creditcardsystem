@@ -1,5 +1,7 @@
 package com.cg.creditcardsystem.service;
 
-public interface RegisterService {
+import com.cg.creditcardsystem.entities.Register;
 
+public interface RegisterService {
+     void addRegister(Register res);
 }
