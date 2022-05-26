@@ -32,7 +32,7 @@ public class Transaction {
      private int redeempoints;
      @OneToMany
      @JoinColumn(name="creditcardno")
-     private CreditCardDetails creditcardno;
+     private CreditCard creditcardno;
 	public long getTransactionid() {
 		return transactionid;
 	}
@@ -69,10 +69,10 @@ public class Transaction {
 	public void setRedeempoints(int redeempoints) {
 		this.redeempoints = redeempoints;
 	}
-	public CreditCardDetails getCreditcardno() {
+	public CreditCard getCreditcardno() {
 		return creditcardno;
 	}
-	public void setCreditcardno(CreditCardDetails creditcardno) {
+	public void setCreditcardno(CreditCard creditcardno) {
 		this.creditcardno = creditcardno;
 	}
      
