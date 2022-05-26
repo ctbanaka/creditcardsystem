@@ -1,10 +1,16 @@
 package com.cg.creditcardsystem.entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="address")
 public class Address {
-	@JoinColumn()
+	@OneToOne
+	@JoinColumn(name="userid")
 	private UserRegistration userId;
 	@Column(name="city",length=30)
     private String city;
