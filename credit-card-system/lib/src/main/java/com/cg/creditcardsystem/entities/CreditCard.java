@@ -27,7 +27,7 @@ public class CreditCard {
 	private int cvv;
 	@OneToOne
 	@JoinColumn(name="userid")
-	private Register userid;
+	private Registration userid;
 	public long getCardNo() {
 		return cardNo;
 	}
@@ -52,10 +52,10 @@ public class CreditCard {
 	public void setCvv(int cvv) {
 		this.cvv = cvv;
 	}
-	public Register getUserid() {
+	public Registration getUserid() {
 		return userid;
 	}
-	public void setUserid(Register userid) {
+	public void setUserid(Registration userid) {
 		this.userid = userid;
 	}
 	 

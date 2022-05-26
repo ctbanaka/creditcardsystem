@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="register")
-public class Register {
+public class Registration {
 	@Id
 	@SequenceGenerator(name="userid_seq",initialValue=1000,
 	sequenceName="userid_seq_gen",allocationSize=1)

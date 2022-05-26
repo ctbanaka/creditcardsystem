@@ -2,8 +2,8 @@ package com.cg.creditcardsystem.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cg.creditcardsystem.entities.Register;
+import com.cg.creditcardsystem.entities.Registration;
 
-public interface RegisterRepository extends JpaRepository<Register, Integer> {
+public interface RegisterRepository extends JpaRepository<Registration, Integer> {
 
 }

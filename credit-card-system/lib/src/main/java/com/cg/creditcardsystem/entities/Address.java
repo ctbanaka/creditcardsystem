@@ -11,17 +11,17 @@ import javax.persistence.Table;
 public class Address {
 	@OneToOne
 	@JoinColumn(name="userid")
-	private Register userId;
+	private Registration userId;
 	@Column(name="city",length=30)
     private String city;
 	@Column(name="state",length=30)
     private String state;
 	@Column(name="pincode",length=6, nullable=false)
     private int pinCode;
-	public Register getUserId() {
+	public Registration getUserId() {
 		return userId;
 	}
-	public void setUserId(Register userId) {
+	public void setUserId(Registration userId) {
 		this.userId = userId;
 	}
 	public String getCity() {
