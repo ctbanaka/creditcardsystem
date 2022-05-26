@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cg.creditcardsystem.entities.Registration;
 
-public interface RegisterRepository extends JpaRepository<Registration, Integer> {
+public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
 
 }
