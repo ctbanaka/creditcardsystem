@@ -10,6 +10,7 @@ public class AddressServiceImpl implements AddressService {
   AddressRepository  adrsrepo;
 	@Override
 	public void addAddress(Address adrs) {
+		adrsrepo.save(adrs);
 		
 	}
 
