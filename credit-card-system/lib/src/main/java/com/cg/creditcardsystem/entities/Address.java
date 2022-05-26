@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="address")
 public class Address {
 	@OneToOne
-	@JoinColumn(name="userid")
+	@JoinColumn(name="userid")//change
 	private UserRegistration userId;
 	@Column(name="city",length=30)
     private String city;

@@ -1,4 +1,4 @@
-
+package com.cg.creditcardsystem.entities;
 import java.util.Date;
 
 import javax.persistence.Column;
