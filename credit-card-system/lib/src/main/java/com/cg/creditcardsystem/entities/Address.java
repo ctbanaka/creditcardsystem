@@ -11,6 +11,8 @@ import javax.persistence.Table;
 public class Address {
 	@OneToOne
 	@JoinColumn(name="userid")//change
+     
+	@JoinColumn(name="userid")
 	private UserRegistration userId;
 	@Column(name="city",length=30)
     private String city;
