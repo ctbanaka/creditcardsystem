@@ -18,7 +18,7 @@ public class UserRegistration {
 	sequenceName="userid_seq_gen",allocationSize=1)
 	@GeneratedValue(generator="userid_seq",strategy=GenerationType.SEQUENCE)
 	@Column(name="userid")
-    private int userID;
+    private int userId;
 	@Column(name="firstname", length=30, nullable=false)
     private String firstname;
 	@Column(name="lastname", length=30)
@@ -33,11 +33,11 @@ public class UserRegistration {
     private String password;
 	
 	
-	public int getUserID() {
-		return userID;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getFirstname() {
 		return firstname;

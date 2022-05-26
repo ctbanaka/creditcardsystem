@@ -4,8 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 
 public class Address {
-	@JoinColumn
-	private UserRegistration userID;
+	@JoinColumn()
+	private UserRegistration userId;
 	@Column(name="city",length=30)
     private String city;
 	@Column(name="state",length=30)
@@ -14,11 +14,11 @@ public class Address {
     private int pincode;
 	
 	
-	public UserRegistration getUserID() {
-		return userID;
+	public UserRegistration getUserId() {
+		return userId;
 	}
-	public void setUserID(UserRegistration userID) {
-		this.userID = userID;
+	public void setUserId(UserRegistration userId) {
+		this.userId = userId;
 	}
 	public String getCity() {
 		return city;
