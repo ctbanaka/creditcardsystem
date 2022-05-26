@@ -2,13 +2,21 @@ package com.cg.creditcardsystem.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="address")
 public class Address {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="address_id")
+	private int addressId;
 	@OneToOne
 	@JoinColumn(name="userid")
 	private Registration userId;
@@ -42,9 +50,11 @@ public class Address {
 	public void setPinCode(int pinCode) {
 		this.pinCode = pinCode;
 	}
-	
-	
-	 
-	 
+	public int getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(int addressId) {
+		this.addressId = addressId;
+	}
 	
 }

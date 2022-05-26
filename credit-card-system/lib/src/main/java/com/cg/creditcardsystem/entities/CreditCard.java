@@ -18,6 +18,7 @@ public class CreditCard {
 	@SequenceGenerator(name="cardno",initialValue=(int) 100000000000001L,
 	sequenceName="cardno_seq_gen",allocationSize=1)
 	@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
+	@Column(name="card_number")
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
 	private String cardType;

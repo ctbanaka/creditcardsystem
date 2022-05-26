@@ -15,24 +15,33 @@ import javax.persistence.Table;
 @Entity
 @Table(name="transaction")
 public class Transaction {
+	
      @Id
      @SequenceGenerator(name="transactionid",initialValue=1000000001,
      sequenceName="transactionid_seq_gen",allocationSize=1)
      @GeneratedValue(generator="transactionid",strategy=GenerationType.SEQUENCE)
      private long transactionId;
+     
      @Column(name="transactiondate",columnDefinition="date",nullable=false)
      private Date transactionDate;
+     
      @Column(name="transactiontype",length=15,nullable=false)
      private String transactionType;
+     
      @Column(name="debitedbalance",columnDefinition="numeric(5,2)",nullable=false)
      private double debitedBalance;
+     
      @Column(name="availablebalance",columnDefinition="numeric(5,2)",nullable=false)
      private double availableBalance;
+     
      @Column(name="redeempoints",length=10)
      private int redeemPoints;
+     
      @ManyToOne
-     @JoinColumn(name="creditcardno")
-     private CreditCard creditCardNo;
+     @JoinColumn(name="card_number")
+     private CreditCard cardNo;
+     
+     
 	public long getTransactionId() {
 		return transactionId;
 	}
@@ -69,11 +78,12 @@ public class Transaction {
 	public void setRedeemPoints(int redeemPoints) {
 		this.redeemPoints = redeemPoints;
 	}
-	public CreditCard getCreditCardNo() {
-		return creditCardNo;
+	public CreditCard getCardNo() {
+		return cardNo;
 	}
-	public void setCreditCardNo(CreditCard creditCardNo) {
-		this.creditCardNo = creditCardNo;
+	public void setCardNo(CreditCard cardNo) {
+		this.cardNo = cardNo;
 	}
+	 
 	  
 }
