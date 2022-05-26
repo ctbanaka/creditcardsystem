@@ -1,5 +1,9 @@
 package com.cg.creditcardsystem.repository;
 
-public interface TransactionRepository extends JpaRepository<Transaction,long> {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.cg.creditcardsystem.entities.Transaction;
+
+public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 
 }
