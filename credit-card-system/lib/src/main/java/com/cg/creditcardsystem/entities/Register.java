@@ -20,48 +20,46 @@ public class Register {
 	@Column(name="userid")
     private int userId;
 	@Column(name="firstname", length=30, nullable=false)
-    private String firstname;
+    private String firstName;
 	@Column(name="lastname", length=30)
-    private String lastname;
+    private String lastName;
 	@Column(name="dob",columnDefinition = "date",nullable=false)
-    private Date dateofbirth;
+    private Date dateOfBirth;
 	@Column(name="phoneno",nullable=false, length=10)
-    private long phoneno;
+    private long phoneNo;
 	@Column(name="email", length=30)
     private String email;
 	@Column(name="password",length=12)
     private String password;
-	
-	
 	public int getUserId() {
 		return userId;
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
-	public Date getDateofbirth() {
-		return dateofbirth;
+	public Date getDateOfBirth() {
+		return dateOfBirth;
 	}
-	public void setDateofbirth(Date dateofbirth) {
-		this.dateofbirth = dateofbirth;
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
-	public long getPhoneno() {
-		return phoneno;
+	public long getPhoneNo() {
+		return phoneNo;
 	}
-	public void setPhoneno(long phoneno) {
-		this.phoneno = phoneno;
+	public void setPhoneNo(long phoneNo) {
+		this.phoneNo = phoneNo;
 	}
 	public String getEmail() {
 		return email;
@@ -75,4 +73,7 @@ public class Register {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-}
+	
+	
+}	
+	 

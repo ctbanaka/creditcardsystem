@@ -17,10 +17,7 @@ public class Address {
 	@Column(name="state",length=30)
     private String state;
 	@Column(name="pincode",length=6, nullable=false)
-    private int pincode;
-	
-	
-	 
+    private int pinCode;
 	public Register getUserId() {
 		return userId;
 	}
@@ -39,12 +36,15 @@ public class Address {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public int getPincode() {
-		return pincode;
+	public int getPinCode() {
+		return pinCode;
 	}
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
+	public void setPinCode(int pinCode) {
+		this.pinCode = pinCode;
 	}
-   
+	
+	
+	 
+	 
 	
 }
