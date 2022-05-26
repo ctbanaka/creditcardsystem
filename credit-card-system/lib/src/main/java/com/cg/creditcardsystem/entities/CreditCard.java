@@ -18,33 +18,33 @@ public class CreditCard {
 	@SequenceGenerator(name="cardno",initialValue=(int) 100000000000001L,
 	sequenceName="cardno_seq_gen",allocationSize=1)
 	@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
-	private long cardno;
+	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
-	private String cardtype;
+	private String cardType;
 	@Column(name="expirydate",columnDefinition="date",nullable=false)
-	private Date expirydate;
+	private Date expiryDate;
 	@Column(name="cvv",length=3,nullable=false)
 	private int cvv;
 	@OneToOne
 	@JoinColumn(name="userid")
 	private Register userid;
-	public long getCardno() {
-		return cardno;
+	public long getCardNo() {
+		return cardNo;
 	}
-	public void setCardno(long cardno) {
-		this.cardno = cardno;
+	public void setCardNo(long cardNo) {
+		this.cardNo = cardNo;
 	}
-	public String getCardtype() {
-		return cardtype;
+	public String getCardType() {
+		return cardType;
 	}
-	public void setCardtype(String cardtype) {
-		this.cardtype = cardtype;
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
 	}
-	public Date getExpirydate() {
-		return expirydate;
+	public Date getExpiryDate() {
+		return expiryDate;
 	}
-	public void setExpirydate(Date expirydate) {
-		this.expirydate = expirydate;
+	public void setExpiryDate(Date expiryDate) {
+		this.expiryDate = expiryDate;
 	}
 	public int getCvv() {
 		return cvv;
@@ -58,6 +58,8 @@ public class CreditCard {
 	public void setUserid(Register userid) {
 		this.userid = userid;
 	}
+	 
+	 
 	 
 	
 }
