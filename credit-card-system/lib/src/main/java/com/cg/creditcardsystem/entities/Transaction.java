@@ -19,61 +19,61 @@ public class Transaction {
      @SequenceGenerator(name="transactionid",initialValue=1000000001,
      sequenceName="transactionid_seq_gen",allocationSize=1)
      @GeneratedValue(generator="transactionid",strategy=GenerationType.SEQUENCE)
-     private long transactionid;
+     private long transactionId;
      @Column(name="transactiondate",columnDefinition="date",nullable=false)
-     private Date transactiondate;
+     private Date transactionDate;
      @Column(name="transactiontype",length=15,nullable=false)
-     private String transactiontype;
+     private String transactionType;
      @Column(name="debitedbalance",columnDefinition="numeric(5,2)",nullable=false)
-     private double debitedbalance;
+     private double debitedBalance;
      @Column(name="availablebalance",columnDefinition="numeric(5,2)",nullable=false)
-     private double availablebalance;
+     private double availableBalance;
      @Column(name="redeempoints",length=10)
-     private int redeempoints;
+     private int redeemPoints;
      @ManyToOne
      @JoinColumn(name="creditcardno")
-     private CreditCard creditcardno;
-	public long getTransactionid() {
-		return transactionid;
+     private CreditCard creditCardNo;
+	public long getTransactionId() {
+		return transactionId;
 	}
-	public void setTransactionid(long transactionid) {
-		this.transactionid = transactionid;
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
 	}
-	public Date getTransactiondate() {
-		return transactiondate;
+	public Date getTransactionDate() {
+		return transactionDate;
 	}
-	public void setTransactiondate(Date transactiondate) {
-		this.transactiondate = transactiondate;
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
 	}
-	public String getTransactiontype() {
-		return transactiontype;
+	public String getTransactionType() {
+		return transactionType;
 	}
-	public void setTransactiontype(String transactiontype) {
-		this.transactiontype = transactiontype;
+	public void setTransactionType(String transactionType) {
+		this.transactionType = transactionType;
 	}
-	public double getDebitedbalance() {
-		return debitedbalance;
+	public double getDebitedBalance() {
+		return debitedBalance;
 	}
-	public void setDebitedbalance(double debitedbalance) {
-		this.debitedbalance = debitedbalance;
+	public void setDebitedBalance(double debitedBalance) {
+		this.debitedBalance = debitedBalance;
 	}
-	public double getAvailablebalance() {
-		return availablebalance;
+	public double getAvailableBalance() {
+		return availableBalance;
 	}
-	public void setAvailablebalance(double availablebalance) {
-		this.availablebalance = availablebalance;
+	public void setAvailableBalance(double availableBalance) {
+		this.availableBalance = availableBalance;
 	}
-	public int getRedeempoints() {
-		return redeempoints;
+	public int getRedeemPoints() {
+		return redeemPoints;
 	}
-	public void setRedeempoints(int redeempoints) {
-		this.redeempoints = redeempoints;
+	public void setRedeemPoints(int redeemPoints) {
+		this.redeemPoints = redeemPoints;
 	}
-	public CreditCard getCreditcardno() {
-		return creditcardno;
+	public CreditCard getCreditCardNo() {
+		return creditCardNo;
 	}
-	public void setCreditcardno(CreditCard creditcardno) {
-		this.creditcardno = creditcardno;
+	public void setCreditCardNo(CreditCard creditCardNo) {
+		this.creditCardNo = creditCardNo;
 	}
-     
+	  
 }
