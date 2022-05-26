@@ -1,4 +1,3 @@
-package com.cg.creditcardsystem.entities;
 
 import java.util.Date;
 

@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -30,7 +30,7 @@ public class Transaction {
      private double availablebalance;
      @Column(name="redeempoints",length=10)
      private int redeempoints;
-     @OneToMany
+     @ManyToOne
      @JoinColumn(name="creditcardno")
      private CreditCard creditcardno;
 	public long getTransactionid() {
