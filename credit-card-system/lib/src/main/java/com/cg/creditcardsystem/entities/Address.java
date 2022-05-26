@@ -13,7 +13,7 @@ public class Address {
 	@JoinColumn(name="userid")
      
 	@JoinColumn(name="userid")
-	private UserRegistration userId;
+	private Register userId;
 	@Column(name="city",length=30)
     private String city;
 	@Column(name="state",length=30)
@@ -22,10 +22,11 @@ public class Address {
     private int pincode;
 	
 	
-	public UserRegistration getUserId() {
+	 
+	public Register getUserId() {
 		return userId;
 	}
-	public void setUserId(UserRegistration userId) {
+	public void setUserId(Register userId) {
 		this.userId = userId;
 	}
 	public String getCity() {
