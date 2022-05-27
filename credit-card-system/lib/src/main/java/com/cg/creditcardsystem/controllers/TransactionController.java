@@ -1,5 +1,9 @@
 package com.cg.creditcardsystem.controllers;
 
+<<<<<<< HEAD
+public class TransactionController {
+
+=======
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,4 +28,5 @@ public class TransactionController {
 	
    }
    
+>>>>>>> 2a84f2e46b4d3ab4851bf5d906b9b84d73f24232
 }
