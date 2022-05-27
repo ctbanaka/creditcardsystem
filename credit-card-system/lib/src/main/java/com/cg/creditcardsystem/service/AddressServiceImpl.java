@@ -17,7 +17,7 @@ public class AddressServiceImpl implements AddressService {
   
 	@Override
 	public int addAddress(AddressDto addrdto) {
-	   Registration reg= regrepo.getUserById(addrdto.getUserId());
+	   Registration reg= regrepo.getById(addrdto.getUserId());
       Address addr= new Address();
       addr.setUserId(reg);
       addr.setCity(addrdto.getCity());
