@@ -6,4 +6,6 @@ import com.cg.creditcardsystem.entities.Registration;
 
 public interface RegistrationRepository extends JpaRepository<Registration, Integer> {
 
+	Registration getUserById(int userId);
+
 }
