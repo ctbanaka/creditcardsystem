@@ -23,8 +23,8 @@ public class AddressServiceImpl implements AddressService {
       addr.setCity(addrdto.getCity());
       addr.setState(addrdto.getState());
       addr.setPinCode(addrdto.getPinCode());
-     // System.out.println(addrdto);
-      regrepo.save(reg);
+      System.out.println(addrdto);
+      adrsrepo.save(addr);
       return addr.getAddressId();
 		
 	}
