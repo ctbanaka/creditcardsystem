@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="register")
@@ -29,6 +30,7 @@ public class Registration {
     private long phoneNo;
 	@Column(name="email", length=30)
     private String email;
+	//@Transient
 	@Column(name="password",length=12)
     private String password;
 	public int getUserId() {
