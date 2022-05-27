@@ -4,34 +4,24 @@ import java.util.Date;
 
 import javax.persistence.Column;
 
+import com.cg.creditcardsystem.entities.CreditCard;
+
 public class TransactionDto {
-	private long transactionId;
 	private long cardNo;
     private Date transactionDate;
-    private String transactionType;
+    private String description;
     private double debitedBalance;
     private double availableBalance;
     private int redeemPoints;
     
     
-	public long getTransactionId() {
-		return transactionId;
-	}
-	public void setTransactionId(long transactionId) {
-		this.transactionId = transactionId;
-	}
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
 	public void setTransactionDate(Date transactionDate) {
 		this.transactionDate = transactionDate;
 	}
-	public String getTransactionType() {
-		return transactionType;
-	}
-	public void setTransactionType(String transactionType) {
-		this.transactionType = transactionType;
-	}
+
 	public double getDebitedBalance() {
 		return debitedBalance;
 	}
@@ -54,16 +44,25 @@ public class TransactionDto {
 	public long getCardNo() {
 		return cardNo;
 	}
+
+	public String getDescription() {
+		return description;
+	}
 	public void setCardNo(long cardNo) {
 		this.cardNo = cardNo;
 	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	@Override
 	public String toString() {
-		return "TransactionDto [transactionId=" + transactionId + ", transactionDate=" + transactionDate
-				+ ", transactionType=" + transactionType + ", debitedBalance=" + debitedBalance + ", availableBalance="
-				+ availableBalance + ", redeemPoints=" + redeemPoints + "]";
-	}
+		return "TransactionDto [cardNo=" + cardNo + ", transactionDate=" + transactionDate + ", description="
+				+ description + ", debitedBalance=" + debitedBalance + ", availableBalance=" + availableBalance
+				+ ", redeemPoints=" + redeemPoints + "]";
 	
+	}
+ 
+	 
 }
 	
     

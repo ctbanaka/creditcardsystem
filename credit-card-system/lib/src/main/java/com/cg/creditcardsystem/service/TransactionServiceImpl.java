@@ -1,22 +1,31 @@
 package com.cg.creditcardsystem.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Transaction;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.TransactionRepository;
-
+@Service
 public class TransactionServiceImpl implements TransactionService {
      @Autowired
      TransactionRepository transrepo;
      @Autowired
      CreditCardRepository  cardrepo;
 	@Override
-	public int addTransaction(TransactionDto transdto) {
-		CreditCard card= cardrepo.getById(transdto.)
-		return 1;
+	public long addTransaction(TransactionDto transdto) {
+		CreditCard card= cardrepo.getById(transdto.getCardNo());
+		Transaction transaction=new Transaction();
+		transaction.setCardNo(card);
+		transaction.setDescription(transdto.getDescription());
+		transaction.setDebitedBalance(transdto.getDebitedBalance());
+		transaction.setTransactionDate(transdto.getTransactionDate());
+		transaction.setRedeemPoints(transdto.getRedeemPoints());
+		transaction.setAvailableBalance(transdto.getAvailableBalance());
+	    transrepo.save(transaction);
+		return transaction.getTransactionId();
 	}
 
 	
