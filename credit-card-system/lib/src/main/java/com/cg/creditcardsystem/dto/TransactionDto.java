@@ -6,11 +6,13 @@ import javax.persistence.Column;
 
 public class TransactionDto {
 	private long transactionId;
+	private long cardNo;
     private Date transactionDate;
     private String transactionType;
     private double debitedBalance;
     private double availableBalance;
     private int redeemPoints;
+    
     
 	public long getTransactionId() {
 		return transactionId;
@@ -47,6 +49,13 @@ public class TransactionDto {
 	}
 	public void setRedeemPoints(int redeemPoints) {
 		this.redeemPoints = redeemPoints;
+	}
+	
+	public long getCardNo() {
+		return cardNo;
+	}
+	public void setCardNo(long cardNo) {
+		this.cardNo = cardNo;
 	}
 	@Override
 	public String toString() {
