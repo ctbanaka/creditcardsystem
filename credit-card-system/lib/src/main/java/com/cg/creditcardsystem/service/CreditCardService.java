@@ -1,7 +1,7 @@
 package com.cg.creditcardsystem.service;
 
-import com.cg.creditcardsystem.entities.CreditCard;
+import com.cg.creditcardsystem.dto.CreditCardDto;
 
 public interface CreditCardService {
-	void addCreditCard(CreditCard crd);
+	long addCreditCard(CreditCardDto carddto);
 }
