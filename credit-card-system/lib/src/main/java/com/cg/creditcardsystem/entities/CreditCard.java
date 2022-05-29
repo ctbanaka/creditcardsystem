@@ -26,6 +26,7 @@ public class CreditCard {
 	private Date expiryDate;
 	@Column(name="cvv",length=3,nullable=false)
 	private int cvv;
+	private double creditLimit;
 	@OneToOne
 	@JoinColumn(name="userid")
 	private Registration userid;
@@ -58,6 +59,12 @@ public class CreditCard {
 	}
 	public void setUserid(Registration userid) {
 		this.userid = userid;
+	}
+	public double getCreditLimit() {
+		return creditLimit;
+	}
+	public void setCreditLimit(double creditLimit) {
+		this.creditLimit = creditLimit;
 	}
 	 
 	 

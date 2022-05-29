@@ -3,10 +3,12 @@ package com.cg.creditcardsystem.dto;
 import java.util.Date;
 
 public class CreditCardDto {
+	private long cardNo;
 	private String cardType;
 	private Date expiryDate;
 	private int cvv;
 	private int userId;
+	private double creditLimit;
 	public String getCardType() {
 		return cardType;
 	}
@@ -31,10 +33,23 @@ public class CreditCardDto {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	 
+	public long getCardNo() {
+		return cardNo;
+	}
+	public void setCardNo(long cardNo) {
+		this.cardNo = cardNo;
+	}
+	public double getCreditLimit() {
+		return creditLimit;
+	}
+	public void setCreditLimit(double creditLimit) {
+		this.creditLimit = creditLimit;
+	}
 	@Override
 	public String toString() {
-		return "CreditCardDto [cardType=" + cardType + ", expiryDate=" + expiryDate + ", cvv=" + cvv + ", userId="
-				+ userId + "]";
+		return "CreditCardDto [cardNo=" + cardNo + ", cardType=" + cardType + ", expiryDate=" + expiryDate + ", cvv="
+				+ cvv + ", userId=" + userId + ", creditLimit=" + creditLimit + "]";
 	}
 	
 }

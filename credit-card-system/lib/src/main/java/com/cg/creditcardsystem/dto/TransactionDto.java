@@ -11,7 +11,6 @@ public class TransactionDto {
     private Date transactionDate;
     private String description;
     private double debitedBalance;
-    private double availableBalance;
     private int redeemPoints;
     
     
@@ -28,12 +27,7 @@ public class TransactionDto {
 	public void setDebitedBalance(double debitedBalance) {
 		this.debitedBalance = debitedBalance;
 	}
-	public double getAvailableBalance() {
-		return availableBalance;
-	}
-	public void setAvailableBalance(double availableBalance) {
-		this.availableBalance = availableBalance;
-	}
+	 
 	public int getRedeemPoints() {
 		return redeemPoints;
 	}
@@ -57,10 +51,10 @@ public class TransactionDto {
 	@Override
 	public String toString() {
 		return "TransactionDto [cardNo=" + cardNo + ", transactionDate=" + transactionDate + ", description="
-				+ description + ", debitedBalance=" + debitedBalance + ", availableBalance=" + availableBalance
-				+ ", redeemPoints=" + redeemPoints + "]";
-	
+				+ description + ", debitedBalance=" + debitedBalance + ", redeemPoints=" + redeemPoints + "]";
 	}
+	 
+	
  
 	 
 }

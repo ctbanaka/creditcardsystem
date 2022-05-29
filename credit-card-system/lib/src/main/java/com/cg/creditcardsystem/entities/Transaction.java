@@ -31,9 +31,6 @@ public class Transaction {
      @Column(name="debitedbalance",columnDefinition="numeric(5,2)",nullable=false)
      private double debitedBalance;
      
-     @Column(name="availablebalance",columnDefinition="numeric(5,2)",nullable=false)
-     private double availableBalance;
-     
      @Column(name="redeempoints",length=10)
      private int redeemPoints;
      
@@ -73,14 +70,7 @@ public class Transaction {
 		this.debitedBalance = debitedBalance;
 	}
 
-	public double getAvailableBalance() {
-		return availableBalance;
-	}
-
-	public void setAvailableBalance(double availableBalance) {
-		this.availableBalance = availableBalance;
-	}
-
+	 
 	public int getRedeemPoints() {
 		return redeemPoints;
 	}

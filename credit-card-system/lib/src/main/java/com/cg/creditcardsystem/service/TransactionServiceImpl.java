@@ -23,7 +23,6 @@ public class TransactionServiceImpl implements TransactionService {
 		transaction.setDebitedBalance(transdto.getDebitedBalance());
 		transaction.setTransactionDate(transdto.getTransactionDate());
 		transaction.setRedeemPoints(transdto.getRedeemPoints());
-		transaction.setAvailableBalance(transdto.getAvailableBalance());
 	    transrepo.save(transaction);
 		return transaction.getTransactionId();
 	}
