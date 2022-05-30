@@ -32,10 +32,10 @@ public class TransactionController {
 	
    }
   
-   @GetMapping("/card/{cardno}")
-   public ResponseEntity<List<Transaction>> viewAllTransactions(@PathVariable long cardNo){
-	  List<Transaction> translist= transservice.viewAllTransactions(cardNo);
-	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
+   @GetMapping("/cardno/{cardno}")
+   public ResponseEntity<List<TransactionDto>> viewAllTransactions(@PathVariable long cardNo){
+	  List<TransactionDto> translist= transservice.viewAllTransactions(cardNo);
+	return new ResponseEntity<List<TransactionDto>>(translist,HttpStatus.OK);
 	   
  }
   

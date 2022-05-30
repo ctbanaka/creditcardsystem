@@ -30,7 +30,6 @@ public class Registration  {
     private long phoneNo;
 	@Column(name="email", length=30)
     private String email;
-	//@Transient
 	@Column(name="password",length=12)
     private String password;
 	public int getUserId() {

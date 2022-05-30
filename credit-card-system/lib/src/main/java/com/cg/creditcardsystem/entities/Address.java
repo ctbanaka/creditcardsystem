@@ -26,6 +26,7 @@ public class Address {
     private String state;
 	@Column(name="pincode",length=6, nullable=false)
     private int pinCode;
+	 
 	public Registration getUserId() {
 		return userId;
 	}

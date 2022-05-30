@@ -9,7 +9,7 @@ import com.cg.creditcardsystem.entities.Transaction;
 
 public interface TransactionService {
 	long addTransaction(TransactionDto transdto);
-	List<Transaction> viewAllTransactions(long cardNo);
+	List<TransactionDto> viewAllTransactions(long cardNo);
 	List<Transaction> viewTransactionsByDates(long cardNo, Date startDate, Date endDate);
 	Optional<Transaction> viewTransactionById(long transactionId);
 	
