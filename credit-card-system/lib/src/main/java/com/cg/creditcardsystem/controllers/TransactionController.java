@@ -1,9 +1,15 @@
 package com.cg.creditcardsystem.controllers;
 
 
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,5 +31,25 @@ public class TransactionController {
 	return new ResponseEntity<String>("transaction inserted", HttpStatus.OK);
 	
    }
-
+   
+//   @GetMapping("/card/{cardno}")
+//   public ResponseEntity<List<Transaction>> viewAllTransactions(@PathVariable long cardNo){
+//	  List<Transaction> translist= transservice.viewAllTransactions(cardNo);
+//	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
+//	   
+// }
+  
+   @GetMapping("/card/{bydate}")
+   public ResponseEntity<List<Transaction>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
+	  List<Transaction> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
+	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
+	   
+   }
+   
+   @GetMapping("/card/{transactionid}")
+   public ResponseEntity<Optional<Transaction>> viewTransactionById(long transactionId){
+	   Optional<Transaction> trans=transservice.viewTransactionById(transactionId);
+	return new ResponseEntity<Optional<Transaction>>(trans,HttpStatus.OK);
+	   
+   }
 }

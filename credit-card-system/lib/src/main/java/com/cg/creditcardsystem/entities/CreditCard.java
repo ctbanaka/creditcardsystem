@@ -15,10 +15,10 @@ import javax.persistence.Table;
 @Table(name="credit_card")
 public class CreditCard {
 	@Id
-	@SequenceGenerator(name="cardno",initialValue=  (int) 100000000000001L,
-	sequenceName="cardno_seq_gen",allocationSize=1)
-	@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
-	@Column(name="card_number")
+	//@SequenceGenerator(name="cardno",initialValue=  (int) 100000000000001L,
+	//sequenceName="cardno_seq_gen",allocationSize=1)
+	//@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
+	@Column(name="card_number",length=16)
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
 	private String cardType;
