@@ -27,17 +27,28 @@ public class CreditCardController {
        public ResponseEntity<String> addCreditCard(@RequestBody CreditCardDto carddto){
 	   long cardNo= service.addCreditCard(carddto);
 	   return new ResponseEntity<String>("added card="+cardNo,HttpStatus.OK);
- }
+      }
       @GetMapping
       public ResponseEntity<List<CreditCard>>getAllcards(){
     	  List<CreditCard> card=service.viewAllCards();
     	  return new ResponseEntity<List<CreditCard>>(card,HttpStatus.OK);
     	  
       }
-      @DeleteMapping
-      public ResponseEntity<String>deleteCreditCared(@PathVariable int card){
-    	  return new ResponseEntity<String>("delete",HttpStatus.OK);
+      
+      @GetMapping
+      public ResponseEntity<CreditCard> getCardByUser(int userId){
+    	  CreditCard card=service.getCardById(userId);
+		return new ResponseEntity<CreditCard>(card,HttpStatus.OK);
+    	  
       }
+      
+      @DeleteMapping
+      public ResponseEntity<String>deleteCreditCared(@PathVariable long card){
+    	  service.deleteCard(card);
+    	  return new ResponseEntity<String>("deleted",HttpStatus.OK);
+      }
+      
+      
       
 }
 
