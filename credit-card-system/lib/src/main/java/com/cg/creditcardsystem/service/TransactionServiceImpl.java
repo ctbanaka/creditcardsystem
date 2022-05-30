@@ -30,12 +30,12 @@ public class TransactionServiceImpl implements TransactionService {
 	    transrepo.save(transaction);
 		return transaction.getTransactionId();
 	}
-//	@Override
-//	public List<Transaction> viewAllTransactions(long cardNo) {
-//		return transrepo.getTransactionsByCardNo(cardNo);
-//	}
 	@Override
-	public List<Transaction> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
+	public List<Transaction> viewAllTransactions(long cardNo) {
+		return transrepo.getTransactionsByCardNo(cardNo);
+	}
+	@Override
+	public Optional<List<Transaction>> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
 	return transrepo.getTransactionByDate(startDate, endDate, cardNo);
 	}
 	@Override

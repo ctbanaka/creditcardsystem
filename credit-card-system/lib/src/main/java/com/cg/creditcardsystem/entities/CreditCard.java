@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -18,6 +19,7 @@ public class CreditCard {
 	//@SequenceGenerator(name="cardno",initialValue=  (int) 100000000000001L,
 	//sequenceName="cardno_seq_gen",allocationSize=1)
 	//@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
+	
 	@Column(name="card_number",length=16)
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)

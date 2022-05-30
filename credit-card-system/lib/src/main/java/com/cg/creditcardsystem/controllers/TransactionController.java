@@ -31,18 +31,18 @@ public class TransactionController {
 	return new ResponseEntity<String>("transaction inserted", HttpStatus.OK);
 	
    }
-   
-//   @GetMapping("/card/{cardno}")
-//   public ResponseEntity<List<Transaction>> viewAllTransactions(@PathVariable long cardNo){
-//	  List<Transaction> translist= transservice.viewAllTransactions(cardNo);
-//	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
-//	   
-// }
+  
+   @GetMapping("/card/{cardno}")
+   public ResponseEntity<List<Transaction>> viewAllTransactions(@PathVariable long cardNo){
+	  List<Transaction> translist= transservice.viewAllTransactions(cardNo);
+	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
+	   
+ }
   
    @GetMapping("/card/{bydate}")
-   public ResponseEntity<List<Transaction>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
-	  List<Transaction> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
-	return new ResponseEntity<List<Transaction>>(translist,HttpStatus.OK);
+   public ResponseEntity<Optional<List<Transaction>>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
+	  Optional<List<Transaction>> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
+	return new ResponseEntity<Optional<List<Transaction>>>(translist,HttpStatus.OK);
 	   
    }
    
