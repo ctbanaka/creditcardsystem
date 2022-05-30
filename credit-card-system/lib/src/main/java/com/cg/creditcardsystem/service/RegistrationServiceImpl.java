@@ -20,18 +20,18 @@ public class RegistrationServiceImpl implements RegistrationService {
 		}
 
 	@Override
-	public List<Registration> viewAllRegistration() {
+	public List<Registration> viewAllUserDetails() {
 		return regrepo.findAll();
 	}
 
 	@Override
-	public void deleteRegistration(int userid) {
+	public void deleteUser(int userid) {
 	   regrepo.deleteById(userid);
 		
 	}
 
 	@Override
-	public void updateRegistrattion(Registration reg) {
+	public void updateUserDetails(Registration reg) {
 		regrepo.save(reg);
 		
 	}
