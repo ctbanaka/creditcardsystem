@@ -37,7 +37,7 @@ public class AddressController {
    }
    @GetMapping("/id/{userId}")
    public ResponseEntity<Address> getAddressByUser(int userId){
-	   Address address= addrservice.getAddress(addressId);
+	   Address address= addrservice.getAddress(userId);
 	return new ResponseEntity<Address>(address,HttpStatus.OK);
 	   
    }
