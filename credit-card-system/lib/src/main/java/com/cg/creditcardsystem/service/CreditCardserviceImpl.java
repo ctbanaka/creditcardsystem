@@ -50,22 +50,24 @@ public class CreditCardserviceImpl implements CreditCardService{
 	
 	
 	
+	
     
-	//@Override
-	//public long addCreditCard(CreditCardDto carddto) {
-		//Registration reg= regrepo.getById(carddto.getUserId());
-		//CreditCard card= new CreditCard();
-		//card.setUserid(reg);
-		//card.setCardNo(carddto.getCardNo());
-		//card.setCardType(carddto.getCardType());
-		//card.setCreditLimit(carddto.getCreditLimit());
-		//card.setCvv(carddto.getCvv());
-		//card.setExpiryDate(carddto.getExpiryDate());
-		//cardrepo.save(card);
-		//return card.getCardNo();//
+	@Override
+	public long addCreditCard(CreditCardDto carddto) {
+		Registration reg= regrepo.getById(carddto.getUserId());
+		CreditCard card= new CreditCard();
+		card.setUserid(reg);
+		card.setCardNo(carddto.getCardNo());
+		card.setCardType(carddto.getCardType());
+		card.setCreditLimit(carddto.getCreditLimit());
+		card.setCvv(carddto.getCvv());
+		card.setExpiryDate(carddto.getExpiryDate());
+		cardrepo.save(card);
+		return card.getCardNo();//
 		
 		
 	}
+}
 
 
 
