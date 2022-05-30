@@ -12,6 +12,7 @@ import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Transaction;
 import com.cg.creditcardsystem.exceptions.CardNotFoundException;
+import com.cg.creditcardsystem.exceptions.InvalidCardDetailsException;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.TransactionRepository;
 @Service
@@ -37,6 +38,7 @@ public class TransactionServiceImpl implements TransactionService {
 		CreditCard card=cardrepo.getCardByCardNo(cardNo);
 		if(card==null)
 			throw new CardNotFoundException();
+
 		List<Transaction> translist= transrepo.getTransactionsByCardNo(cardNo);
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
 		for(Transaction trans:translist) {
@@ -57,8 +59,9 @@ public class TransactionServiceImpl implements TransactionService {
 	return trans;
 	}
 	@Override
-	public Transaction viewTransactionById(long transactionId) {
-		Transaction tran=transrepo.getById(transactionId);
+	public Optional<Transaction> viewTransactionById(long transactionId) {
+		
+		Optional<Transaction> tran=transrepo.findById(transactionId);
 		return tran;
 	}
 	 

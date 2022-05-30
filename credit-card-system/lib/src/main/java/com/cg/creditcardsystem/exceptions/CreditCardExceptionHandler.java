@@ -12,8 +12,8 @@ public class CreditCardExceptionHandler {
 	return new ResponseEntity<Object>("card not found..",HttpStatus.NOT_FOUND);
 	  
   }
-	@ExceptionHandler(value=InvalidCardDetails.class)
-	  public ResponseEntity<Object> exception(InvalidCardDetails exception){
+	@ExceptionHandler(value=InvalidCardDetailsException.class)
+	  public ResponseEntity<Object> exception(InvalidCardDetailsException exception){
 		return new ResponseEntity<Object>("please enter valid numbers.",HttpStatus.NOT_FOUND);
 		  
 	  }
