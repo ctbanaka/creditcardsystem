@@ -1,5 +1,7 @@
 package com.cg.creditcardsystem.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +29,22 @@ public class AddressServiceImpl implements AddressService {
       adrsrepo.save(addr);
       return addr.getAddressId();
 		
+	}
+
+	@Override
+	public List<Address> viewAllAddress() {
+		return adrsrepo.findAll();
+	}
+
+	@Override
+	public void deleteAddress(int addressId) {
+		adrsrepo.deleteById(addressId);
+		
+	}
+
+	@Override
+	public void updateAddress(Address adrs) {
+        adrsrepo.save(adrs);
 	}
 
 }
