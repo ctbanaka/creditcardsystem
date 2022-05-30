@@ -4,6 +4,9 @@ package com.cg.creditcardsystem.service;
 
 
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +15,7 @@ import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
-<<<<<<< HEAD
-=======
 
->>>>>>> 2cd43a77538262f9ad0937f79719ce51477003ef
 @Service
 public class CreditCardserviceImpl implements CreditCardService{
 
@@ -38,9 +38,9 @@ public class CreditCardserviceImpl implements CreditCardService{
 	
 	}
 	@Override
-	public java.util.List<CreditCard> viewAllCards() {
+	public List<CreditCard> viewAllCards();{
 		
-		return null;
+		return cardrepo.findAll();
 	}
 	@Override
 	public void deleteCard(long cardNo) {
@@ -48,8 +48,10 @@ public class CreditCardserviceImpl implements CreditCardService{
 		
 	}
 	@Override
-	public java.util.Optional<CreditCard> getCardById(int userId) {
-		// TODO Auto-generated method stub
+	public Optional<CreditCard> getCardById(int userId) {
+		Optional<CreditCard> crad=cardrepo.findAllById(userId);
+		return crad;
+	
 		return null;
 	}
 }

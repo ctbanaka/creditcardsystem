@@ -56,25 +56,17 @@ public class CreditCard {
 	public void setCvv(int cvv) {
 		this.cvv = cvv;
 	}
-<<<<<<< HEAD
-=======
-	public Registration getUserid() {
-		return userId;
-	}
-	public void setUserid(Registration userid) {
-		this.userId = userid;
-	}
->>>>>>> 2cd43a77538262f9ad0937f79719ce51477003ef
 	public double getCreditLimit() {
 		return creditLimit;
 	}
 	public void setCreditLimit(double creditLimit) {
 		this.creditLimit = creditLimit;
 	}
-	public Registration getUserid() {
-		return userid;
+	public Registration getUserId() {
+		return userId;
 	}
-	public void setUserid(Registration userid) {
-		this.userid = userid;
+	public void setUserId(Registration userId) {
+		this.userId = userId;
 	}
+	
 }
