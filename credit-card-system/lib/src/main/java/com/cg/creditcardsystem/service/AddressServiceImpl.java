@@ -26,7 +26,6 @@ public class AddressServiceImpl implements AddressService {
       addr.setCity(addrdto.getCity());
       addr.setState(addrdto.getState());
       addr.setPinCode(addrdto.getPinCode());
-      System.out.println(addrdto);
       adrsrepo.save(addr);
       return addr.getAddressId();
 		
@@ -38,8 +37,8 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public Optional<Address> getAddress(int addressId) {
-	 Optional<Address> addrs=adrsrepo.findById(addressId);
+	public Address getAddress(int userId) {
+	 Address addrs=adrsrepo.getAddress(userId);
 		return addrs;
 	}
 
