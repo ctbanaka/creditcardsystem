@@ -14,7 +14,7 @@ public interface CreditCardService {
 	long addCreditCard(CreditCardDto carddto);  
     List<CreditCard> viewAllCards();
     void deleteCard(long cardNo);
-    Optional<CreditCard> getCardById(int userId);
+    CreditCard getCardById(int userId);
     
 
 }

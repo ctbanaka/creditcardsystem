@@ -34,24 +34,22 @@ public class CreditCardserviceImpl implements CreditCardService{
 		card.setExpiryDate(carddto.getExpiryDate());
 		cardrepo.save(card);
 		return card.getCardNo();
-		
-	
+			
 	}
-	@Override
-	public List<CreditCard> viewAllCards();{
-		
-		return cardrepo.findAll();
-	}
+
 	@Override
 	public void deleteCard(long cardNo) {
 		cardrepo.deleteById(cardNo);
 		
 	}
 	@Override
-	public Optional<CreditCard> getCardById(int userId) {
-		Optional<CreditCard> crad=cardrepo.findAllById(userId);
-		return crad;
-	
-		return null;
+	public CreditCard getCardById(int userId) {
+		CreditCard card=cardrepo.getCardInfo(userId);
+	 return card;
+	}
+
+	@Override
+	public List<CreditCard> viewAllCards() {
+		return cardrepo.findAll();
 	}
 }
