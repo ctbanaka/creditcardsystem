@@ -35,8 +35,14 @@ public class AddressController {
 	   List<Address> addrlist= addrservice.viewAllAddress();
 	   return new ResponseEntity<List<Address>>(addrlist,HttpStatus.OK);
    }
+   @GetMapping("/id/{userId}")
+   public ResponseEntity<Address> getAddressByUser(int userId){
+	   Address address= addrservice.getAddress(userId);
+	return new ResponseEntity<Address>(address,HttpStatus.OK);
+	   
+   }
    
-   @DeleteMapping("/id/{addressid}")
+   @DeleteMapping
    public ResponseEntity<String> deleteAddress(@PathVariable int addressId){
    	addrservice.deleteAddressById(addressId);
    	return new ResponseEntity<String>("deleted",HttpStatus.OK);
