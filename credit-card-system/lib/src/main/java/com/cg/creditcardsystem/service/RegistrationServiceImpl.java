@@ -1,5 +1,6 @@
 package com.cg.creditcardsystem.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,25 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	@Override
 	public void addUser(Registration reg) {
-		Optional<Registration> register=regrepo.findById(reg.getUserId());
+		Optional<Registration> register = regrepo.findById(reg.getUserId());
 		regrepo.save(reg);
 		}
+
+	@Override
+	public List<Registration> viewAllRegistration() {
+		return regrepo.findAll();
+	}
+
+	@Override
+	public void deleteRegistration(int userid) {
+	   regrepo.deleteById(userid);
+		
+	}
+
+	@Override
+	public void updateRegistrattion(Registration reg) {
+		regrepo.save(reg);
+		
+	}
 
 }
