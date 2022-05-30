@@ -45,4 +45,9 @@ public class RegistrationController {
     	service.updateUserDetails(reg);
     	return new ResponseEntity<String>("updated",HttpStatus.OK);
     }
+    @GetMapping()
+    public ResponseEntity<Optional<Registration>> getUserById(@PathVariable int userid){
+    	Optional<Registration> reg = service.getUserById(userid);
+    	return new ResponseEntity<Optional<Registration>>(reg,HttpStatus.OK);
+    }
 }

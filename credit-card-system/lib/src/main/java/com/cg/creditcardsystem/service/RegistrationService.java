@@ -11,6 +11,6 @@ public interface RegistrationService {
      List<Registration> viewAllUserDetails();
      void deleteUser(int userid);
      void updateUserDetails(Registration reg);
-     Optional<Registration> getRegById(int userid);
+     Optional<Registration> getUserById(int userid);
 }
 
