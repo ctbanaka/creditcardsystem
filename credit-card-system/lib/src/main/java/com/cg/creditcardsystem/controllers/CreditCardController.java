@@ -35,7 +35,7 @@ public class CreditCardController {
     	  
       }
       
-      @GetMapping()
+      @GetMapping("/id/{}userId")
       public ResponseEntity<CreditCard> getCardByUser(@PathVariable int userId){
     	  CreditCard card=service.getCardById(userId);
 		return new ResponseEntity<CreditCard>(card,HttpStatus.OK);

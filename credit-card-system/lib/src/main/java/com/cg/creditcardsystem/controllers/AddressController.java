@@ -35,7 +35,7 @@ public class AddressController {
 	   List<Address> addrlist= addrservice.viewAllAddress();
 	   return new ResponseEntity<List<Address>>(addrlist,HttpStatus.OK);
    }
-   @GetMapping
+   @GetMapping("/id/{userId}")
    public ResponseEntity<Address> getAddressByUser(int userId){
 	   Address address= addrservice.getAddress(userId);
 	return new ResponseEntity<Address>(address,HttpStatus.OK);
