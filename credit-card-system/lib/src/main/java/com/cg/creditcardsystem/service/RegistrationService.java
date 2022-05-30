@@ -8,9 +8,9 @@ import com.cg.creditcardsystem.entities.Registration;
 
 public interface RegistrationService {
      void addUser(Registration reg);
-     List<Registration> viewAllRegistration();
-     void deleteRegistration(int userid);
-     void updateRegistrattion(Registration reg);
+     List<Registration> viewAllUserDetails();
+     void deleteUser(int userid);
+     void updateUserDetails(Registration reg);
      Optional<Registration> getRegById(int userid);
 }
 
