@@ -2,6 +2,7 @@ package com.cg.creditcardsystem.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,13 +30,18 @@ public class TransactionServiceImpl implements TransactionService {
 	    transrepo.save(transaction);
 		return transaction.getTransactionId();
 	}
+//	@Override
+//	public List<Transaction> viewAllTransactions(long cardNo) {
+//		return transrepo.getTransactionsByCardNo(cardNo);
+//	}
 	@Override
-	public List<Transaction> viewAllTransactions() {
-		return transrepo.findAll();
+	public List<Transaction> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
+	return transrepo.getTransactionByDate(startDate, endDate, cardNo);
 	}
 	@Override
-	public List<Transaction> viewTransactionsByDate(long cardNo, Date startDate, Date endDate) {
-	return transrepo.find;
+	public Optional<Transaction> viewTransactionById(long transactionId) {
+		Optional<Transaction> tran=transrepo.findById(transactionId);
+		return tran;
 	}
 	 
 	
