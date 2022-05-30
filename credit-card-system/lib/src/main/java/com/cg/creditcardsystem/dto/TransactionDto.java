@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import com.cg.creditcardsystem.entities.CreditCard;
 
 public class TransactionDto {
+	private long transactionId;
 	private long cardNo;
     private Date transactionDate;
     private String description;
@@ -48,12 +49,19 @@ public class TransactionDto {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public long getTransactionId() {
+		return transactionId;
+	}
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
+	}
 	@Override
 	public String toString() {
-		return "TransactionDto [cardNo=" + cardNo + ", transactionDate=" + transactionDate + ", description="
-				+ description + ", debitedBalance=" + debitedBalance + ", redeemPoints=" + redeemPoints + "]";
+		return "TransactionDto [transactionId=" + transactionId + ", cardNo=" + cardNo + ", transactionDate="
+				+ transactionDate + ", description=" + description + ", debitedBalance=" + debitedBalance
+				+ ", redeemPoints=" + redeemPoints + "]";
 	}
-	 
+	
 	
  
 	 

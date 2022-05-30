@@ -22,6 +22,7 @@ public class TransactionServiceImpl implements TransactionService {
 	public long addTransaction(TransactionDto transdto) {
 		CreditCard card= cardrepo.getById(transdto.getCardNo());
 		Transaction transaction=new Transaction();
+		transaction.setTransactionId(transdto.getTransactionId());
 		transaction.setCardNo(card);
 		transaction.setDescription(transdto.getDescription());
 		transaction.setDebitedBalance(transdto.getDebitedBalance());
