@@ -14,44 +14,44 @@ import antlr.collections.List;
 @Service
 public class CreditCardserviceImpl implements CreditCardService{
 	
-    @Autowired
-	CreditCardRepository cardrepo;
-    @Autowired
-    RegistrationRepository regrepo;
-	@Override
-	public Optional<CreditCard> findAllActiveByUerId(int userid) {
-		Optional<CreditCard> cred=cardrepo.findAllById(userid);
-		return cred;
-	
-	}
-	@Override
-	public Optional<CreditCard> findById(int userid) {
-		Optional<CreditCard> cred=cardrepo.findById(userid);
-		return cred;
-	}
-	@Override
-	public Optional<CreditCard> findActiveById(int userid) {
-		Optional<CreditCard> cred=cardrepo.findById(userid);
-		return cred;
-	
-	}
-	@Override
-	public boolean activate(int userid) {
-		
-		return false;
-	}
-	@Override
-	public boolean deactivate(int userid) {
-	
-		return false;	
-	}
-	@Override
-	public boolean changeDailyLimit(CreditCard card) {
-		Optional<CreditCard>cred=cardrepo.ChangeByCardno(card);
-		return false;
-	}
+//    @Autowired
+//	CreditCardRepository cardrepo;
+//    @Autowired
+//    RegistrationRepository regrepo;
+//	@Override
+//	public Optional<CreditCard> findAllActiveByUerId(int userid) {
+//		Optional<CreditCard> cred=cardrepo.findById(userid);
+//		return cred;
+//	
+//	}
+//	@Override
+//	public Optional<CreditCard> findById(int userid) {
+//		Optional<CreditCard> cred=cardrepo.findById(userid);
+//		return cred;
+//	}
+//	@Override
+//	public Optional<CreditCard> findActiveById(int userid) {
+//		Optional<CreditCard> cred=cardrepo.findById(userid);
+//		return cred;
+//	
+//	}
+//	@Override
+//	public boolean activate(int userid) {
+//		
+//		return false;
+//	}
+//	@Override
+//	public boolean deactivate(int userid) {
+//	
+//		return false;	
+//	}
+//	@Override
+//	public boolean changeDailyLimit(CreditCard card) {
+//		Optional<CreditCard>cred=cardrepo.ChangeByCardno(card);
+//		return false;
+//	}
 }
-
-
-
-	
+//
+//
+//
+//	

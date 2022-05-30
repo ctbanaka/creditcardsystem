@@ -15,11 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="credit_card")
 public class CreditCard {
-	@Id
+	
 	//@SequenceGenerator(name="cardno",initialValue=  (int) 100000000000001L,
 	//sequenceName="cardno_seq_gen",allocationSize=1)
 	//@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
-	
+	@Id
 	@Column(name="card_number",length=16)
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
@@ -31,7 +31,7 @@ public class CreditCard {
 	private double creditLimit;
 	@OneToOne
 	@JoinColumn(name="userid")
-	private Registration userid;
+	private Registration userId;
 	public long getCardNo() {
 		return cardNo;
 	}
@@ -57,10 +57,10 @@ public class CreditCard {
 		this.cvv = cvv;
 	}
 	public Registration getUserid() {
-		return userid;
+		return userId;
 	}
 	public void setUserid(Registration userid) {
-		this.userid = userid;
+		this.userId = userid;
 	}
 	public double getCreditLimit() {
 		return creditLimit;
