@@ -41,8 +41,8 @@ public class TransactionController {
   
    @GetMapping("/card/{bydate}")
    public ResponseEntity<Optional<List<Transaction>>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
-	  Optional<List<Transaction>> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
-	return new ResponseEntity<Optional<List<Transaction>>>(translist,HttpStatus.OK);
+	  List<Transaction> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
+	return new ResponseEntity<Optional<List<Transaction>>>(HttpStatus.OK);
 	   
    }
    

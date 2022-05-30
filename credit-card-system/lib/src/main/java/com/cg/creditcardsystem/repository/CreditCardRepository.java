@@ -10,9 +10,6 @@ import antlr.collections.List;
 
 public interface CreditCardRepository extends JpaRepository<CreditCard, Long> {
 
-	Optional<CreditCard> findById(int userid);
-    Optional<CreditCard> findAllById(int userId);
-    Optional<CreditCard> ChangeByCardno(CreditCard card);
 
 		
 }

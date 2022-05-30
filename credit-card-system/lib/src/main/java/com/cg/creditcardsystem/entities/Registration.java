@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="register")
-public class Registration {
+public class Registration  {
 	@Id
 	@SequenceGenerator(name="userid_seq",initialValue=1000,
 	sequenceName="userid_seq_gen",allocationSize=1)
