@@ -19,37 +19,26 @@ public class CreditCardserviceImpl implements CreditCardService{
     @Autowired
     RegistrationRepository regrepo;
 	@Override
-	public Optional<CreditCard> findAllActiveByUerId(int userid) {
-		Optional<CreditCard> cred=cardrepo.findAllById(userid);
-		return cred;
-	
+	public long addCreditCard(CreditCardDto carddto) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	@Override
-	public Optional<CreditCard> findById(int userid) {
-		Optional<CreditCard> cred=cardrepo.findById(userid);
-		return cred;
+	public java.util.List<CreditCard> viewAllCards() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	@Override
-	public Optional<CreditCard> findActiveById(int userid) {
-		Optional<CreditCard> cred=cardrepo.findById(userid);
-		return cred;
-	
-	}
-	@Override
-	public boolean activate(int userid) {
+	public void deleteCard(long cardNo) {
+		// TODO Auto-generated method stub
 		
-		return false;
 	}
 	@Override
-	public boolean deactivate(int userid) {
-	
-		return false;	
+	public java.util.Optional<CreditCard> getCardById(int userId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	@Override
-	public boolean changeDailyLimit(CreditCard card) {
-		Optional<CreditCard>cred=cardrepo.ChangeByCardno(card);
-		return false;
-	}
+	 
 }
 
 
