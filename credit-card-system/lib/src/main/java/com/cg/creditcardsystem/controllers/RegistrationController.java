@@ -32,17 +32,17 @@ public class RegistrationController {
  	}
     @GetMapping
     public ResponseEntity<List<Registration>> getAllRegistration(){
-    	List<Registration> reglist = service.viewAllUserDetails();
+    	List<Registration> reglist = service.viewAllRegistration();
     	return new ResponseEntity<List<Registration>>(reglist,HttpStatus.OK);
     }
     @DeleteMapping("/id/{userid}")
     public ResponseEntity<String> deleteRegistration(@PathVariable int userid){
-    	service.deleteUser(userid);
+    	service.deleteRegistration(userid);
     	return new ResponseEntity<String>("deleted",HttpStatus.OK);
     }
     @PutMapping
     public ResponseEntity<String> editRegistration(@RequestBody Registration reg){
-    	service.updateUserDetails(reg);
+    	service.updateRegistrattion(reg);
     	return new ResponseEntity<String>("updated",HttpStatus.OK);
     }
 }

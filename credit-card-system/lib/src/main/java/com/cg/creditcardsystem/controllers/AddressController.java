@@ -1,6 +1,7 @@
 package com.cg.creditcardsystem.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,21 +30,20 @@ public class AddressController {
 	   int addressId= addrservice.addAddress(addrdto);
 	   return new ResponseEntity<String>("added address="+addressId,HttpStatus.OK);
    }
-   
-   @GetMapping
-   public ResponseEntity<List<Address>> getAllAddress(){
-	   List<Address> addrlist= addrservice.viewAllAddress();
-	   return new ResponseEntity<List<Address>>(addrlist,HttpStatus.OK);
+
+	@GetMapping
+	public ResponseEntity<List<Address>> getAllAddress() {
+		List<Address> adrsList = addrservice.viewAllAddress();
+		return new ResponseEntity<List<Address>>(adrsList,HttpStatus.OK);
    }
-   
-   @DeleteMapping("/id/{addressid}")
-   public ResponseEntity<String> deleteAddress(@PathVariable int addressId){
-   	addrservice.deleteAddressById(addressId);
-   	return new ResponseEntity<String>("deleted",HttpStatus.OK);
-   }
-   @PutMapping
-   public ResponseEntity<String> editAddress(@RequestBody Address addr ){
-   	addrservice.updateAddress(addr);
-   	return new ResponseEntity<String>("updated",HttpStatus.OK);
-   }
+    @DeleteMapping("/id/{address_id}")
+    public ResponseEntity<String> deleteAddress(@PathVariable int address_id){
+    	addrservice.deleteAddress(address_id);
+    	return new ResponseEntity<String>("deleted",HttpStatus.OK);
+    }
+    @PutMapping
+    public ResponseEntity<String> editAddress(@RequestBody Address adrs){
+    	addrservice.updateAddress(adrs);
+    	return new ResponseEntity<String>("updated",HttpStatus.OK);
+    }
 }
