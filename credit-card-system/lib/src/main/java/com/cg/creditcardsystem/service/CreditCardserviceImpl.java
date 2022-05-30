@@ -14,6 +14,7 @@ import antlr.collections.List;
 @Service
 public class CreditCardserviceImpl implements CreditCardService{
 	
+<<<<<<< HEAD
 //    @Autowired
 //	CreditCardRepository cardrepo;
 //    @Autowired
@@ -50,6 +51,33 @@ public class CreditCardserviceImpl implements CreditCardService{
 //		Optional<CreditCard>cred=cardrepo.ChangeByCardno(card);
 //		return false;
 //	}
+=======
+    @Autowired
+	CreditCardRepository cardrepo;
+    @Autowired
+    RegistrationRepository regrepo;
+	@Override
+	public long addCreditCard(CreditCardDto carddto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public java.util.List<CreditCard> viewAllCards() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void deleteCard(long cardNo) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public java.util.Optional<CreditCard> getCardById(int userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	 
+>>>>>>> edec6f5a6a12f441c01a81082ac2ce82454cbd95
 }
 //
 //
