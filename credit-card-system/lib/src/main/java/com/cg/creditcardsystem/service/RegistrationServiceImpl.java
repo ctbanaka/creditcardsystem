@@ -36,4 +36,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 		
 	}
 
+	@Override
+	public Optional<Registration> getRegById(int userid) {
+		Optional<Registration> reg = regrepo.findById(userid);
+		return reg;
+	}
+
 }
