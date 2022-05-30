@@ -8,6 +8,7 @@ import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
+import com.google.common.base.Optional;
 
 import antlr.collections.List;
 @Service
@@ -18,54 +19,36 @@ public class CreditCardserviceImpl implements CreditCardService{
     @Autowired
     RegistrationRepository regrepo;
 	@Override
-	public List findAllActiveByUerId(int userid) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<CreditCard> findAllActiveByUerId(int userid) {
+		Optional<CreditCard> cred=cardrepo.findAllById(userid);
+		return cred;
+	
 	}
 	@Override
-	public CreditCard findById(int userid) {
-		// TODO Auto-generated method stub
-		return null;
+	public Optional<CreditCard> findById(int userid) {
+		Optional<CreditCard> cred=cardrepo.findById(userid);
+		return cred;
 	}
 	@Override
-	public CreditCard findActiveById(int userid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public boolean changeDailyLimit(CreditCard card) {
-		// TODO Auto-generated method stub
-		return false;
+	public Optional<CreditCard> findActiveById(int userid) {
+		Optional<CreditCard> cred=cardrepo.findById(userid);
+		return cred;
+	
 	}
 	@Override
 	public boolean activate(int userid) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 	@Override
 	public boolean deactivate(int userid) {
-		// TODO Auto-generated method stub
-		return false;
+	
+		return false;	
 	}
-	
-	
-	
-	
-    
 	@Override
-	public long addCreditCard(CreditCardDto carddto) {
-		Registration reg= regrepo.getById(carddto.getUserId());
-		CreditCard card= new CreditCard();
-		card.setUserid(reg);
-		card.setCardNo(carddto.getCardNo());
-		card.setCardType(carddto.getCardType());
-		card.setCreditLimit(carddto.getCreditLimit());
-		card.setCvv(carddto.getCvv());
-		card.setExpiryDate(carddto.getExpiryDate());
-		cardrepo.save(card);
-		return card.getCardNo();//
-		
-		
+	public boolean changeDailyLimit(CreditCard card) {
+		Optional<CreditCard>cred=cardrepo.ChangeByCardno(card);
+		return false;
 	}
 }
 
