@@ -11,7 +11,7 @@ public interface TransactionService {
 	long addTransaction(TransactionDto transdto);
 	List<TransactionDto> viewAllTransactions(long cardNo);
 	List<Transaction> viewTransactionsByDates(long cardNo, Date startDate, Date endDate);
-	Optional<Transaction> viewTransactionById(long transactionId);
+	Transaction viewTransactionById(long transactionId);
 	
 	
 

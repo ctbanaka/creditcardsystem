@@ -57,8 +57,8 @@ public class TransactionServiceImpl implements TransactionService {
 	return trans;
 	}
 	@Override
-	public Optional<Transaction> viewTransactionById(long transactionId) {
-		Optional<Transaction> tran=transrepo.findById(transactionId);
+	public Transaction viewTransactionById(long transactionId) {
+		Transaction tran=transrepo.getById(transactionId);
 		return tran;
 	}
 	 

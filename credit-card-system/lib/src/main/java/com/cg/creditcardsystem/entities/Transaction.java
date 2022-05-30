@@ -28,7 +28,7 @@ public class Transaction {
      @Column(name="description",length=15,nullable=false)
      private String description;
      
-     @Column(name="debitedbalance",columnDefinition="numeric(5,2)",nullable=false)
+     @Column(name="debitedbalance",columnDefinition="numeric(6,2)",nullable=false)
      private double debitedBalance;
      
      @Column(name="redeempoints",length=10)
