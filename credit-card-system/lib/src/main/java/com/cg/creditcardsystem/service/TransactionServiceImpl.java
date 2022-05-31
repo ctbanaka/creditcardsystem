@@ -25,7 +25,7 @@ public class TransactionServiceImpl implements TransactionService {
 	public long addTransaction(TransactionDto transdto) {
     	CreditCard card= cardrepo.getById(transdto.getCardNo());
 		Transaction transaction=new Transaction();
-		transaction.setCardNo(card);
+		transaction.setCard(card);
 		transaction.setDescription(transdto.getDescription());
 		transaction.setDebitedBalance(transdto.getDebitedBalance());
 		transaction.setTransactionDate(transdto.getTransactionDate());
@@ -46,7 +46,7 @@ public class TransactionServiceImpl implements TransactionService {
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
 		for(Transaction trans:translist) {
 			TransactionDto transdto=new TransactionDto();
-			transdto.setCardNo(trans.getCardNo().getCardNo());
+			transdto.setCardNo(trans.getCard().getCardNo());
 			transdto.setDebitedBalance(trans.getDebitedBalance());
 			transdto.setDescription(trans.getDescription());
 			transdto.setTransactionDate(trans.getTransactionDate());

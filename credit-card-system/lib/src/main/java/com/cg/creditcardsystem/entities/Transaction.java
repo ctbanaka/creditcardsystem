@@ -36,7 +36,7 @@ public class Transaction {
      
      @ManyToOne
      @JoinColumn(name="card_number")
-     private CreditCard cardNo;
+     private CreditCard card;
 
 	public long getTransactionId() {
 		return transactionId;
@@ -79,13 +79,15 @@ public class Transaction {
 		this.redeemPoints = redeemPoints;
 	}
 
-	public CreditCard getCardNo() {
-		return cardNo;
+	public CreditCard getCard() {
+		return card;
 	}
 
-	public void setCardNo(CreditCard cardNo) {
-		this.cardNo = cardNo;
+	public void setCard(CreditCard card) {
+		this.card = card;
 	}
+
+	 
 
 	 
 
