@@ -17,9 +17,6 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Override
 	public void addUser(Registration reg) {
 		Optional<Registration> register = regrepo.findById(reg.getUserId());
-		if(register==null) {
-			throw new UserNotFoundException();
-		}
 		regrepo.save(reg);
 		}
 
