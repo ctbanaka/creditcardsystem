@@ -16,9 +16,6 @@ import javax.persistence.Table;
 @Table(name="credit_card")
 public class CreditCard {
 	
-	//@SequenceGenerator(name="cardno",initialValue=  (int) 100000000000001L,
-	//sequenceName="cardno_seq_gen",allocationSize=1)
-	//@GeneratedValue(generator="cardno",strategy=GenerationType.SEQUENCE)
 	@Id
 	@Column(name="card_number",length=16)
 	private long cardNo;
