@@ -26,7 +26,7 @@ public class RegistrationController {
      
      
     @PostMapping
- 	public ResponseEntity<String> addUser(@RequestBody Registration reg){
+ 	public ResponseEntity<String> userRegistration(@RequestBody Registration reg){
  		service.addUser(reg);
  		return new ResponseEntity<String>("user added", HttpStatus.OK);
  	}

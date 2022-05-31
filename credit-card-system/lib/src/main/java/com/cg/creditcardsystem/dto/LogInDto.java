@@ -1,13 +1,14 @@
 package com.cg.creditcardsystem.dto;
 
 public class LogInDto {
-  private int logIn;
+  private int logInId;
   private String password;
-public int getLogIn() {
-	return logIn;
+ 
+public int getLogInId() {
+	return logInId;
 }
-public void setLogIn(int logIn) {
-	this.logIn = logIn;
+public void setLogInId(int logInId) {
+	this.logInId = logInId;
 }
 public String getPassword() {
 	return password;
