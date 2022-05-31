@@ -22,7 +22,7 @@ public class TransactionServiceImpl implements TransactionService {
      @Autowired
      CreditCardRepository  cardrepo;
 	@Override
-	public long addTransaction(TransactionDto transdto) {
+	public int addTransaction(TransactionDto transdto) {
     	CreditCard card= cardrepo.getById(transdto.getCardNo());
 		Transaction transaction=new Transaction();
 		transaction.setCard(card);
@@ -58,13 +58,13 @@ public class TransactionServiceImpl implements TransactionService {
 	}
 
 	@Override
-	public Optional<Transaction> viewTransactionById(long transactionId) {
+	public Transaction viewTransactionById(int transactionId) {
 		Transaction transaction=transrepo.getTransactionById(transactionId);
 		if(transaction==null || !(transaction.getTransactionId()==transactionId))
 			throw new InvalidTransactionIdException();
 		
-		Optional<Transaction> tran=transrepo.findById(transactionId);
-		return tran;
+		
+		return transaction;
 	}
 
  

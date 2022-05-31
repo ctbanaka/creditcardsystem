@@ -17,10 +17,10 @@ import javax.persistence.Table;
 public class Transaction {
 	
      @Id
-     @SequenceGenerator(name="transactionid",initialValue=1000000001,
+     @SequenceGenerator(name="transactionid",initialValue=1001,
      sequenceName="transactionid_seq_gen",allocationSize=1)
      @GeneratedValue(generator="transactionid",strategy=GenerationType.SEQUENCE)
-     private long transactionId;
+     private int transactionId;
      
      @Column(name="transactiondate",columnDefinition="date",nullable=false)
      private Date transactionDate;
@@ -38,11 +38,11 @@ public class Transaction {
      @JoinColumn(name="card_number")
      private CreditCard card;
 
-	public long getTransactionId() {
+	public int getTransactionId() {
 		return transactionId;
 	}
 
-	public void setTransactionId(long transactionId) {
+	public void setTransactionId(int transactionId) {
 		this.transactionId = transactionId;
 	}
 

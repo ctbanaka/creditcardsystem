@@ -40,9 +40,9 @@ public class TransactionController {
  }
 
    @GetMapping("/card/{transactionid}")
-   public ResponseEntity<Optional<Transaction>> viewTransactionById(long transactionId){
-	   Optional<Transaction> trans=transservice.viewTransactionById(transactionId);
-	return new ResponseEntity<Optional<Transaction>>(trans,HttpStatus.OK);
+   public ResponseEntity <Transaction> viewTransactionById(int transactionId){
+	   Transaction trans=transservice.viewTransactionById(transactionId);
+	return new ResponseEntity<Transaction>(trans,HttpStatus.OK);
 	   
    }
 }
