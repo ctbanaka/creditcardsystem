@@ -23,11 +23,7 @@ public class CreditCardController {
  @Autowired
  CreditCardserviceImpl service;
  
-      @PostMapping
-       public ResponseEntity<String> addCreditCard(@RequestBody CreditCardDto carddto){
-	   long cardNo= service.addCreditCard(carddto);
-	   return new ResponseEntity<String>("added card="+cardNo,HttpStatus.OK);
-      }
+ 
       @GetMapping
       public ResponseEntity<List<CreditCard>>getAllcards(){
     	  List<CreditCard> card=service.viewAllCards();
