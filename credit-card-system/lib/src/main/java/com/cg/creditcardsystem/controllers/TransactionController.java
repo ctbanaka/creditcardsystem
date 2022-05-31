@@ -38,13 +38,13 @@ public class TransactionController {
 	return new ResponseEntity<List<TransactionDto>>(translist,HttpStatus.OK);
 	   
  }
-  
-   @GetMapping("/card/{bydate}")
-   public ResponseEntity<Optional<List<Transaction>>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
-	  List<Transaction> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
-	return new ResponseEntity<Optional<List<Transaction>>>(HttpStatus.OK);
-	   
-   }
+//  
+//   @GetMapping("/card/{bydate}")
+//   public ResponseEntity<Optional<List<Transaction>>> viewTransactionsByDate(@PathVariable long cardNo, Date startDate,Date endDate){
+//	  List<Transaction> translist= transservice.viewTransactionsByDates(cardNo,startDate, endDate);
+//	return new ResponseEntity<Optional<List<Transaction>>>(HttpStatus.OK);
+//	   
+//   }
    
    @GetMapping("/card/{transactionid}")
    public ResponseEntity<Optional<Transaction>> viewTransactionById(long transactionId){
