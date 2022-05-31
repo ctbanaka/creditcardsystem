@@ -8,7 +8,7 @@ import com.cg.creditcardsystem.entities.Address;
 
 public interface AddressService {
 	int addAddress(AddressDto addrdto);
-	List<Address> viewAllAddress();
+	List<AddressDto> viewAllAddress();
 	Address getAddress(int userId);
 	void deleteAddressById(int addressId);
 	void updateAddress(Address addr);
