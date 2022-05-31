@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.cg.creditcardsystem.dto.AddressDto;
 import com.cg.creditcardsystem.entities.Address;
 import com.cg.creditcardsystem.entities.Registration;
+import com.cg.creditcardsystem.exceptions.AddressNotFoundExcetpion;
 import com.cg.creditcardsystem.repository.AddressRepository;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
 @Service
@@ -21,6 +22,7 @@ public class AddressServiceImpl implements AddressService {
 	@Override
 	public int addAddress(AddressDto addrdto) {
 	   Registration reg= regrepo.getById(addrdto.getUserId());
+	   
       Address addr= new Address();
       addr.setUserId(reg);
       addr.setCity(addrdto.getCity());
@@ -39,6 +41,10 @@ public class AddressServiceImpl implements AddressService {
 	@Override
 	public Address getAddress(int userId) {
 	 Address addrs=adrsrepo.getAddress(userId);
+	  if(addrs==null) {
+		  throw new AddressNotFoundExcetpion();
+		  
+	  }
 		return addrs;
 	}
 

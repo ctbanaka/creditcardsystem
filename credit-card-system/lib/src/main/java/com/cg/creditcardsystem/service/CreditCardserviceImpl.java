@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.cg.creditcardsystem.dto.CreditCardDto;
 import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Registration;
+import com.cg.creditcardsystem.exceptions.CardNotFoundException;
+import com.cg.creditcardsystem.exceptions.InvalidCardDetailsException;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
 
@@ -26,6 +28,8 @@ public class CreditCardserviceImpl implements CreditCardService{
 	@Override
 	public long addCreditCard(CreditCardDto carddto) {
 		Registration reg= regrepo.getById(carddto.getUserId());
+		if(reg==null)
+			throw new InvalidCardDetailsException();
 		CreditCard card=new CreditCard();
 		card.setCardNo(carddto.getCardNo());
 		card.setCardType(carddto.getCardType());
@@ -45,6 +49,9 @@ public class CreditCardserviceImpl implements CreditCardService{
 	@Override
 	public CreditCard getCardById(int userId) {
 		CreditCard card=cardrepo.getCardInfo(userId);
+		if(card==null) {
+			throw new CardNotFoundException();
+		}
 	 return card;
 	}
 
