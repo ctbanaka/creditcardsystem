@@ -1,5 +1,6 @@
 package com.cg.creditcardsystem.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,9 +35,21 @@ public class AddressServiceImpl implements AddressService {
 	}
 
 	@Override
-	public List<Address> viewAllAddress() {
-		return adrsrepo.findAll();
+	public List<AddressDto> viewAllAddress() {
+		List<Address>address=adrsrepo.findAll();
+		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
+		for(AddressDto address1:addresslist) {
+			AddressDto addressdto=new AddressDto();
+			addressdto.setCity(address1.getCity());
+			addressdto.setState(address1.getState());
+			addressdto.setPinCode(address1.getPinCode());
+			addressdto.setUserId(address1.getUserId());
+			addresslist.add(addressdto);
+			}
+		return addresslist;
 	}
+
+
 
 	@Override
 	public Address getAddress(int userId) {

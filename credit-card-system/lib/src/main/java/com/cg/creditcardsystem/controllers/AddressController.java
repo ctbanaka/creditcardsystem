@@ -31,10 +31,11 @@ public class AddressController {
    }
    
    @GetMapping
-   public ResponseEntity<List<Address>> getAllAddress(){
-	   List<Address> addrlist= addrservice.viewAllAddress();
-	   return new ResponseEntity<List<Address>>(addrlist,HttpStatus.OK);
+   public ResponseEntity<List<AddressDto>> getAllAddress(){
+	   List<AddressDto> addrlist= addrservice.viewAllAddress();
+	   return new ResponseEntity<List<AddressDto>>(HttpStatus.OK);
    }
+
    @GetMapping("/id/{userId}")
    public ResponseEntity<Address> getAddressByUser(int userId){
 	   Address address= addrservice.getAddress(userId);
