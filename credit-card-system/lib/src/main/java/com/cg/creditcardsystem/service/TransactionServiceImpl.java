@@ -13,6 +13,7 @@ import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Transaction;
 import com.cg.creditcardsystem.exceptions.CardNotFoundException;
 import com.cg.creditcardsystem.exceptions.InvalidCardDetailsException;
+import com.cg.creditcardsystem.exceptions.InvalidTransactionIdException;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.TransactionRepository;
 @Service
@@ -23,7 +24,7 @@ public class TransactionServiceImpl implements TransactionService {
      CreditCardRepository  cardrepo;
 	@Override
 	public long addTransaction(TransactionDto transdto) {
-		CreditCard card= cardrepo.getById(transdto.getCardNo());
+    	CreditCard card= cardrepo.getById(transdto.getCardNo());
 		Transaction transaction=new Transaction();
 		transaction.setCardNo(card);
 		transaction.setDescription(transdto.getDescription());
@@ -36,8 +37,10 @@ public class TransactionServiceImpl implements TransactionService {
 	@Override
 	public List<TransactionDto> viewAllTransactions(long cardNo) {
 		CreditCard card=cardrepo.getCardByCardNo(cardNo);
-		if(card==null)
+		if(card==null) 
 			throw new CardNotFoundException();
+		else if(!(card.getCardNo()==cardNo))
+		throw new InvalidCardDetailsException();
 
 		List<Transaction> translist= transrepo.getTransactionsByCardNo(cardNo);
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
@@ -53,17 +56,21 @@ public class TransactionServiceImpl implements TransactionService {
 		return translistdto;
 	 
 	}
-//	@Override
-//	public List<Transaction> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
-//	List<Transaction> trans = transrepo.getTransactionByDate(startDate, endDate, cardNo);
-//	return trans;
-//	}
+
 	@Override
 	public Optional<Transaction> viewTransactionById(long transactionId) {
+		Transaction transaction=transrepo.getTransactionById(transactionId);
+		if(transaction==null || !(transaction.getTransactionId()==transactionId))
+			throw new InvalidTransactionIdException();
 		
 		Optional<Transaction> tran=transrepo.findById(transactionId);
 		return tran;
 	}
-	 
+
+//	@Override
+//	public List<TransactionDto> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
+//	List<Transaction> trans = transrepo.getTransactionByDate(startDate, endDate, cardNo);
+//	return trans;
+//	}
 	
 }

@@ -19,4 +19,7 @@ public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 
 	@Query(value="select trans from Transaction trans where trans.cardNo=?1")
 	List<Transaction> getTransactionsByCardNo(long cardNo);
+	
+	@Query(value="select trans.transactionId from Transaction trans where trans.transactionId=?1")
+	Transaction getTransactionById(long transactionId);
 }
