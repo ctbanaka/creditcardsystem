@@ -1,6 +1,8 @@
 package com.cg.creditcardsystem.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.Date;
 import java.util.List;
@@ -38,5 +40,11 @@ import com.cg.creditcardsystem.service.TransactionServiceImpl;
     	 int transactionid = service.addTransaction(transdto);
     	 Transaction  trans=transrepo.getTransactionById(transactionid);
     	 assertEquals(transactionid, trans.getTransactionId());
+     }
+     @Test
+     void testViewTransactionById() {
+    	 transrepo.getTransactionById(1000000019);
+    	 Transaction trans= service.viewTransactionById(1000000019);
+    	 assertNotNull(trans);
      }
     }
