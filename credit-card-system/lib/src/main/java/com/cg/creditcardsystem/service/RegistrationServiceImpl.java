@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.creditcardsystem.entities.Registration;
+import com.cg.creditcardsystem.exceptions.UserNotFoundException;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
 @Service
 public class RegistrationServiceImpl implements RegistrationService {
@@ -16,6 +17,9 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Override
 	public void addUser(Registration reg) {
 		Optional<Registration> register = regrepo.findById(reg.getUserId());
+		if(register==null) {
+			throw new UserNotFoundException();
+		}
 		regrepo.save(reg);
 		}
 
