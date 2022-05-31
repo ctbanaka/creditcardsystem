@@ -47,6 +47,12 @@ import com.cg.creditcardsystem.service.TransactionServiceImpl;
     	 Transaction trans= service.viewTransactionById(1000000019);
     	 assertNotNull(trans);
      }
+     @Test
+     void testviewAllTransactions() {
+    	 List<Transaction> translist=
+    	 transrepo.getTransactionsByCardNo(1234567891234567L);
+    	 assertNotNull(translist);
+     }
      
      
      
@@ -54,9 +60,7 @@ import com.cg.creditcardsystem.service.TransactionServiceImpl;
      
      
      
-     
-     
-     
+    
      
      
      
