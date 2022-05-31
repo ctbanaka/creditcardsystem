@@ -19,8 +19,7 @@ public class LogIn {
    private int loginId;
    @Column(name="password")
    private String password;
-  // @Column(name="role")
-   //private String role;
+  
 public int getSlno() {
 	return slno;
 }
@@ -39,13 +38,7 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-//public String getRole() {
-//	return role;
-//}
-//public void setRole(String role) {
-//	this.role = role;
-//}
-//   
+
    
    
 }

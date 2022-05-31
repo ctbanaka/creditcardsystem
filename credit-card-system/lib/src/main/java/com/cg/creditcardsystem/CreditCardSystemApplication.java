@@ -7,7 +7,7 @@ public class CreditCardSystemApplication {
 
 	public static void main(String[] args) {
 	 SpringApplication.run(CreditCardSystemApplication.class, args);
-       System.out.println("hello");
+ 
 	}
 
 }

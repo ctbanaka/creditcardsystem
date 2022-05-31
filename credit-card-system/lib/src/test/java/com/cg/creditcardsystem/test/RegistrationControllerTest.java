@@ -1,4 +1,4 @@
-package com.cg.creditcardsystem.junittest;
+package com.cg.creditcardsystem.test;
 
 import org.junit.jupiter.api.Test;
 

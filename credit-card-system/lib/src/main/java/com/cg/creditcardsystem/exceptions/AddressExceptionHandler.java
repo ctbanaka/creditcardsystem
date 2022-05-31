@@ -12,8 +12,8 @@ public class AddressExceptionHandler {
 	return new ResponseEntity<Object>("address not found..",HttpStatus.NOT_FOUND);
 	  
   }
-	//@ExceptionHandler(value=AddressAlreadyExistException.class)
-	//public ResponseEntity<Object>exception(AddressAlreadyExistException exception){
-		//return new ResponseEntity<Object>("Adress Aready Exist..",HttpStatus.NOT_FOUND);
+	@ExceptionHandler(value=AddressAlreadyExistException.class)
+	public ResponseEntity<Object>exception(AddressAlreadyExistException exception){
+		return new ResponseEntity<Object>("Adress Aready Exist..",HttpStatus.NOT_FOUND);
 	}
-//
+}
