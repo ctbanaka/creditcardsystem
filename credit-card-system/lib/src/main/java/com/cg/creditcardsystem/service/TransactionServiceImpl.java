@@ -68,10 +68,6 @@ public class TransactionServiceImpl implements TransactionService {
 		return tran;
 	}
 
-//	@Override
-//	public List<TransactionDto> viewTransactionsByDates(long cardNo, Date startDate, Date endDate) {
-//	List<Transaction> trans = transrepo.getTransactionByDate(startDate, endDate, cardNo);
-//	return trans;
-//	}
+ 
 	
 }
