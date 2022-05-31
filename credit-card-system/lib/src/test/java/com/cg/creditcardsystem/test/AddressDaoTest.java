@@ -28,6 +28,7 @@ import java.util.List;
     
    @Test
     void testGetAllItemsNotNull() {
-    	List<Address> addrlist = adrsrepo.findAll();
+    	@SuppressWarnings("unused")
+		List<Address> addrlist = adrsrepo.findAll();
     }
 }

@@ -34,6 +34,7 @@ public class AddressServiceImpl implements AddressService {
 
 	@Override
 	public List<AddressDto> viewAllAddress() {
+		@SuppressWarnings("unused")
 		List<Address>address=adrsrepo.findAll();
 		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
 		for(AddressDto address1:addresslist) {
