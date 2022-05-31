@@ -15,15 +15,15 @@ import java.util.List;
 
 
 @SpringBootTest
-public class AddressDaoTest {
+ class AddressDaoTest {
     @Autowired
     AddressRepository adrsrepo;
     
     @Test
-    public void testGetAddrById() {
+      void testGetAddrById() {
     	Address addr = adrsrepo.getAddress(30);
     	System.out.println(addr.getAddressId());
-    	assertEquals(addr.getAddressId(),30);
+    	assertEquals(30,addr.getAddressId());
     }
     
    @Test

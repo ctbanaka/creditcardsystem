@@ -1,9 +1,6 @@
 package com.cg.creditcardsystem.service;
 
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
-
 import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.entities.Transaction;
 

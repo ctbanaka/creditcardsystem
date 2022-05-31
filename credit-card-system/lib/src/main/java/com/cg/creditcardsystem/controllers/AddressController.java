@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.creditcardsystem.dto.AddressDto;
 import com.cg.creditcardsystem.entities.Address;
-import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.service.AddressServiceImpl;
 
 @RestController
@@ -32,7 +31,8 @@ public class AddressController {
    
    @GetMapping
    public ResponseEntity<List<AddressDto>> getAllAddress(){
-	   List<AddressDto> addrlist= addrservice.viewAllAddress();
+	   @SuppressWarnings("unused")
+	List<AddressDto> addrlist= addrservice.viewAllAddress();
 	   return new ResponseEntity<List<AddressDto>>(HttpStatus.OK);
    }
 

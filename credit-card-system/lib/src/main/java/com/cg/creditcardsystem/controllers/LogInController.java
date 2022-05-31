@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.creditcardsystem.dto.LogInDto;
-import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.service.LogInServiceImpl;
 @RestController
 @RequestMapping("/login")

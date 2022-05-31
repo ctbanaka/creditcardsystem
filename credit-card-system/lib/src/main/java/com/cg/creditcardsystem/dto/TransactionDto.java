@@ -2,9 +2,6 @@ package com.cg.creditcardsystem.dto;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-
-import com.cg.creditcardsystem.entities.CreditCard;
 
 public class TransactionDto {
 	private long cardNo;
