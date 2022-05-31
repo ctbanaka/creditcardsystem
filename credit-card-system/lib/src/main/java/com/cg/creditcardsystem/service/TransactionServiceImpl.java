@@ -41,6 +41,7 @@ public class TransactionServiceImpl implements TransactionService {
 			throw new CardNotFoundException();
 		}
 		else if(!(card.getCardNo()==cardNo)) {
+		//throw new InvalidCardDetailsException();
 		throw new InvalidCardDetailsException();
 		}
 		List<Transaction> translist= transrepo.getTransactionsByCardNo(cardNo);
