@@ -29,9 +29,9 @@ import com.cg.creditcardsystem.service.TransactionServiceImpl;
      @Test
      void testAddTransaction() {
     	 TransactionDto transdto= new TransactionDto();
-    	 transdto.setCardNo(1234567891234567L);
+    	 transdto.setCardNo(1234567890123456L);
     	 transdto.setDebitedBalance(2000);
-    	 transdto.setDescription("shopping");
+    	 transdto.setDescription("Daimond");
     	 transdto.setRedeemPoints(100);
     	 transdto.setTransactionDate(new Date());
     	 
@@ -42,13 +42,13 @@ import com.cg.creditcardsystem.service.TransactionServiceImpl;
      @Test
      void testViewTransactionById() {
     	 transrepo.getTransactionById(1000000019);
-    	 Transaction trans= service.viewTransactionById(1000000019);
+    	 Transaction trans= service.viewTransactionById(1000000014);
     	 assertNotNull(trans);
      }
      @Test
      void testviewAllTransactions() {
     	 List<Transaction> translist=
-    	 transrepo.getTransactionsByCardNo(1234567891234567L);
+    	 transrepo.getTransactionsByCardNo(1234567890123456L);
     	 assertNotNull(translist);
      }
      
