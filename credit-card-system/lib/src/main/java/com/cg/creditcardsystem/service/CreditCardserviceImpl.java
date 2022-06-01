@@ -4,6 +4,7 @@ package com.cg.creditcardsystem.service;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -54,7 +55,23 @@ public class CreditCardserviceImpl implements CreditCardService{
 	}
 
 	@Override
-	public List<CreditCard> viewAllCards() {
-		return cardrepo.findAll();
-	}
-}
+	public List<CreditCardDto> viewAllCards() {
+		ArrayList<CreditCardDto> creditcardlist =new ArrayList<CreditCardDto>();
+		for(CreditCardDto creditcard : creditcardlist) {
+			CreditCardDto creditcarddto = new CreditCardDto();
+			creditcarddto.setCardNo(creditcard.getCardNo());
+			creditcarddto.setCardType(creditcard.getCardType());
+			creditcarddto.setCvv(creditcard.getCvv());
+			creditcarddto.setExpiryDate(creditcard.getExpiryDate());
+			creditcarddto.setCreditLimit(creditcard.getCreditLimit());
+			
+			
+            }
+		return creditcardlist;
+  }
+ }
+	
+	
+	
+	
+	

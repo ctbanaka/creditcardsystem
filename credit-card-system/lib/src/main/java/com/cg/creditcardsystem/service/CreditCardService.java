@@ -10,7 +10,7 @@ import com.cg.creditcardsystem.entities.CreditCard;
 public interface CreditCardService {
 
 	long addCreditCard(CreditCardDto carddto);  
-    List<CreditCard> viewAllCards();
+    List<CreditCardDto> viewAllCards();
     void deleteCard(long cardNo);
     CreditCard getCardById(int userId);
     

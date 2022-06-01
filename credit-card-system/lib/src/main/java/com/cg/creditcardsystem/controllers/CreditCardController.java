@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.cg.creditcardsystem.dto.CreditCardDto;
 import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.service.CreditCardserviceImpl;
 
@@ -23,9 +23,9 @@ public class CreditCardController {
  
  
       @GetMapping
-      public ResponseEntity<List<CreditCard>>getAllcards(){
-    	  List<CreditCard> card=service.viewAllCards();
-    	  return new ResponseEntity<List<CreditCard>>(card,HttpStatus.OK);
+      public ResponseEntity<List<CreditCardDto>>getAllcards(){
+    	  List<CreditCardDto> card=service.viewAllCards();
+    	  return new ResponseEntity<List<CreditCardDto>>(card,HttpStatus.OK);
     	  
       }
       
