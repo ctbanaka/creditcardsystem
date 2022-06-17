@@ -13,24 +13,33 @@ import javax.persistence.Table;
 @Entity
 @Table(name="register")
 public class Registration  {
+	
 	@Id
 	@SequenceGenerator(name="userid_seq",initialValue=1000,
 	sequenceName="userid_seq_gen",allocationSize=1)
 	@GeneratedValue(generator="userid_seq",strategy=GenerationType.SEQUENCE)
 	@Column(name="userid")
     private int userId;
+	
 	@Column(name="firstname", length=30, nullable=false)
     private String firstName;
+	
 	@Column(name="lastname", length=30)
     private String lastName;
+	
 	@Column(name="dob",columnDefinition = "date",nullable=false)
     private Date dateOfBirth;
+	
 	@Column(name="phoneno",nullable=false, length=10)
     private long phoneNo;
+	
 	@Column(name="email", length=30)
     private String email;
+	
 	@Column(name="password",length=12)
     private String password;
+	
+	
 	public int getUserId() {
 		return userId;
 	}
