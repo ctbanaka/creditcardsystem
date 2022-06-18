@@ -34,15 +34,16 @@ public class AddressServiceImpl implements AddressService {
 
 	@Override
 	public List<AddressDto> viewAllAddress() {
-		@SuppressWarnings("unused")
-		List<Address>address=adrsrepo.findAll();
+		
+		List<Address> address =adrsrepo.findAll();
 		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
-		for(AddressDto address1:addresslist) {
-			AddressDto addressdto=new AddressDto();
-			addressdto.setCity(address1.getCity());
-			addressdto.setState(address1.getState());
-			addressdto.setPinCode(address1.getPinCode());
-			addressdto.setUserId(address1.getUserId());
+		AddressDto addressdto=new AddressDto();
+		 for(Address addr:address) {
+			
+			addressdto.setCity(addr.getCity());
+			addressdto.setState(addr.getState());
+			addressdto.setPinCode(addr.getPinCode());
+			addressdto.setUserId(addr.getUserId().getUserId());
 			addresslist.add(addressdto);
 			}
 		return addresslist;

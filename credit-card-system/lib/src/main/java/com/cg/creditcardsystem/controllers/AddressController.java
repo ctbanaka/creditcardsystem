@@ -33,7 +33,7 @@ public class AddressController {
    public ResponseEntity<List<AddressDto>> getAllAddress(){
 	   @SuppressWarnings("unused")
 	List<AddressDto> addrlist= addrservice.viewAllAddress();
-	   return new ResponseEntity<List<AddressDto>>(HttpStatus.OK);
+	   return new ResponseEntity<List<AddressDto>>(addrlist,HttpStatus.OK);
    }
 
    @GetMapping("/id/{userId}")
