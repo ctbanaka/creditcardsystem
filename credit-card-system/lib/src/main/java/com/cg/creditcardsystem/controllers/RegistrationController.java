@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.creditcardsystem.dto.RegistrationDto;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.service.RegistrationServiceImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -30,9 +31,9 @@ public class RegistrationController {
  		return new ResponseEntity<String>("user added", HttpStatus.OK);
  	}
     @GetMapping
-    public ResponseEntity<List<Registration>> getAllRegistration(){
-    	List<Registration> reglist = service.viewAllUserDetails();
-    	return new ResponseEntity<List<Registration>>(reglist,HttpStatus.OK);
+    public ResponseEntity<List<RegistrationDto>> getAllRegistration(){
+    	List<RegistrationDto> reglist = service.viewAllUserDetails();
+    	return new ResponseEntity<List<RegistrationDto>>(reglist,HttpStatus.OK);
     }
     @DeleteMapping("/id/{userid}")
     public ResponseEntity<String> deleteRegistration(@PathVariable int userid){

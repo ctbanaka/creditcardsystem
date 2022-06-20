@@ -1,11 +1,14 @@
 package com.cg.creditcardsystem.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cg.creditcardsystem.dto.AddressDto;
+import com.cg.creditcardsystem.dto.RegistrationDto;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
 @Service
@@ -21,8 +24,20 @@ public class RegistrationServiceImpl implements RegistrationService {
 		}
 
 	@Override
-	public List<Registration> viewAllUserDetails() {
-		return regrepo.findAll();
+	public List<RegistrationDto> viewAllUserDetails() {
+		List<Registration> reglist = regrepo.findAll();
+		ArrayList<RegistrationDto> registerList =new ArrayList<RegistrationDto>();
+		RegistrationDto regdto= new RegistrationDto();
+		 for(Registration reg: reglist) {
+			 regdto.setUserId(reg.getUserId());
+			 regdto.setFirstName(reg.getFirstName());
+			 regdto.setLastName(reg.getLastName());
+			 regdto.setEmail(reg.getEmail());
+			 regdto.setPhoneNo(reg.getPhoneNo());
+			 regdto.setDateOfBirth(reg.getDateOfBirth());
+			 registerList.add(regdto);
+		 }
+		 return registerList;
 	}
 
 	@Override
