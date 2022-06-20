@@ -8,7 +8,6 @@ public class CreditCardDto {
 	private Date expiryDate;
 	private int cvv;
 	private int userId;
-	private double creditLimit;
 	public String getCardType() {
 		return cardType;
 	}
@@ -40,16 +39,11 @@ public class CreditCardDto {
 	public void setCardNo(long cardNo) {
 		this.cardNo = cardNo;
 	}
-	public double getCreditLimit() {
-		return creditLimit;
-	}
-	public void setCreditLimit(double creditLimit) {
-		this.creditLimit = creditLimit;
-	}
+	
 	@Override
 	public String toString() {
 		return "CreditCardDto [cardNo=" + cardNo + ", cardType=" + cardType + ", expiryDate=" + expiryDate + ", cvv="
-				+ cvv + ", userId=" + userId + ", creditLimit=" + creditLimit + "]";
+				+ cvv + ", userId=" + userId + "]";
 	}
 	
 }

@@ -32,7 +32,6 @@ public class CreditCardserviceImpl implements CreditCardService{
 		CreditCard card=new CreditCard();
 		card.setCardNo(carddto.getCardNo());
 		card.setCardType(carddto.getCardType());
-		card.setCreditLimit(card.getCreditLimit());
 		card.setCvv(carddto.getCvv());
 		card.setExpiryDate(carddto.getExpiryDate());
 		cardrepo.save(card);
@@ -56,18 +55,19 @@ public class CreditCardserviceImpl implements CreditCardService{
 
 	@Override
 	public List<CreditCardDto> viewAllCards() {
-		ArrayList<CreditCardDto> creditcardlist =new ArrayList<CreditCardDto>();
-		for(CreditCardDto creditcard : creditcardlist) {
+		List<CreditCard> creditcardlist =cardrepo.findAll();
+		ArrayList<CreditCardDto> creditcardDtoList=new ArrayList<>();
+		for(CreditCard creditcard : creditcardlist) {
 			CreditCardDto creditcarddto = new CreditCardDto();
 			creditcarddto.setCardNo(creditcard.getCardNo());
 			creditcarddto.setCardType(creditcard.getCardType());
 			creditcarddto.setCvv(creditcard.getCvv());
 			creditcarddto.setExpiryDate(creditcard.getExpiryDate());
-			creditcarddto.setCreditLimit(creditcard.getCreditLimit());
 			
+			creditcardDtoList.add(creditcarddto);
 			
             }
-		return creditcardlist;
+		return creditcardDtoList;
   }
  }
 	

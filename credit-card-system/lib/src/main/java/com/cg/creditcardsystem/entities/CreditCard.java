@@ -9,11 +9,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="credit_card")
+@Table(name="creditcard")
 public class CreditCard {
 	
 	@Id
-	@Column(name="card_number",length=16, unique=true)
+	@Column(name="cardnumber",length=16, unique=true)
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
 	private String cardType;
@@ -21,7 +21,6 @@ public class CreditCard {
 	private Date expiryDate;
 	@Column(name="cvv",length=3,nullable=false)
 	private int cvv;
-	private double creditLimit;
 	@OneToOne
 	@JoinColumn(name="userid")
 	private Registration userId;
@@ -46,15 +45,7 @@ public class CreditCard {
 	public int getCvv() {
 		return cvv;
 	}
-	public void setCvv(int cvv) {
-		this.cvv = cvv;
-	}
-	public double getCreditLimit() {
-		return creditLimit;
-	}
-	public void setCreditLimit(double creditLimit) {
-		this.creditLimit = creditLimit;
-	}
+	public void setCvv(int cvv) {	}
 	public Registration getUserId() {
 		return userId;
 	}
