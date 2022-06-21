@@ -40,8 +40,8 @@ public class CreditCardserviceImpl implements CreditCardService{
 	}
 
 	@Override
-	public void deleteCard(long cardNo) {
-		cardrepo.deleteById(cardNo);
+	public void deleteCreditCard(long cardNo) {
+		cardrepo.deleteByCardNo( cardNo);
 		
 	}
 	@Override

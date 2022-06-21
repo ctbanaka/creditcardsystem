@@ -30,9 +30,9 @@ public class CreditCardController {
     	  
       }
       
-      @DeleteMapping
-      public ResponseEntity<String>deleteCreditCared(@PathVariable long card){
-    	  service.deleteCard(card);
+      @DeleteMapping("{cardNo}")
+      public ResponseEntity<String>deleteCreditCard(@PathVariable long cardNo){
+    	  service.deleteCreditCard(cardNo);
     	  return new ResponseEntity<String>("deleted",HttpStatus.OK);
       }
       
