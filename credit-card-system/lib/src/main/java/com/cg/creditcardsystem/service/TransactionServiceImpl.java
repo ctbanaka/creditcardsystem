@@ -33,13 +33,13 @@ public class TransactionServiceImpl implements TransactionService {
 	}
 	@Override
 	public List<TransactionDto> viewAllTransactions(long cardNo) {
-//		//CreditCard card=cardrepo.getCardByCardNo(cardNo);
-//		if(card==null) {
-//			throw new CardNotFoundException();
-//		}
-//		else if(!(card.getCardNo()==cardNo)) {
-//		throw new InvalidCardDetailsException();
-//		}
+		CreditCard card=cardrepo.getCardByCardNo(cardNo);
+		if(card==null) {
+			throw new CardNotFoundException();
+		}
+		else if(!(card.getCardNo()==cardNo)) {
+		throw new InvalidCardDetailsException();
+		}
 		List<Transaction> translist= transrepo.getTransactionsByCardNo(cardNo);
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
 		for(Transaction trans:translist) {
