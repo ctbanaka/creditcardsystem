@@ -33,7 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
 	}
 	@Override
 	public List<TransactionDto> viewAllTransactions(long cardNo) {
-		CreditCard card=cardrepo.getCardByCardNo(cardNo);
+		CreditCard card=cardrepo.getById(cardNo);
 		if(card==null) {
 			throw new CardNotFoundException();
 		}
