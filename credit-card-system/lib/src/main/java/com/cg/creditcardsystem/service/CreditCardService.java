@@ -11,7 +11,7 @@ public interface CreditCardService {
 
 	long addCreditCard(CreditCardDto carddto);  
     List<CreditCardDto> viewAllCards();
-    void deleteCard(long cardNo);
+    void deleteCreditCard(long cardNo);
     CreditCard getCardById(int userId);
     
 

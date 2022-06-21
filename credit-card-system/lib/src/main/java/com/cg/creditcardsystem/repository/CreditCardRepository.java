@@ -13,5 +13,9 @@ public interface CreditCardRepository extends JpaRepository<CreditCard, Long> {
  
  @Query(value="select card.cardNo from CreditCard card where card.cardNo=?1")
  CreditCard getCardByCardNo(long cardNo);
+
+void deleteByCardNo(long cardNo);
+
+
 		
 }

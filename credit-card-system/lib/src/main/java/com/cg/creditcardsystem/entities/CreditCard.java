@@ -45,7 +45,9 @@ public class CreditCard {
 	public int getCvv() {
 		return cvv;
 	}
-	public void setCvv(int cvv) {	}
+	public void setCvv(int cvv) {
+		this.cvv = cvv;
+	}
 	public Registration getUserId() {
 		return userId;
 	}
