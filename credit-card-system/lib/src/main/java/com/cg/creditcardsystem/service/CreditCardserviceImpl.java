@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import com.cg.creditcardsystem.dto.CreditCardDto;
 import com.cg.creditcardsystem.entities.CreditCard;
 import com.cg.creditcardsystem.entities.Registration;
-import com.cg.creditcardsystem.exceptions.CardNotFoundException;
 import com.cg.creditcardsystem.exceptions.InvalidCardDetailsException;
+import com.cg.creditcardsystem.exceptions.InvalidTransactionIdException;
 import com.cg.creditcardsystem.repository.CreditCardRepository;
 import com.cg.creditcardsystem.repository.RegistrationRepository;
 
@@ -41,17 +41,10 @@ public class CreditCardserviceImpl implements CreditCardService{
 
 	@Override
 	public void deleteCreditCard(long cardNo) {
-		cardrepo.deleteByCardNo( cardNo);
+		cardrepo.deleteById(cardNo);;
 		
 	}
-	@Override
-	public CreditCard getCardById(int userId) {
-		CreditCard card=cardrepo.getCardInfo(userId);
-		if(card==null) {
-			throw new CardNotFoundException();
-		}
-	 return card;
-	}
+	
 
 	@Override
 	public List<CreditCardDto> viewAllCards() {
@@ -69,6 +62,23 @@ public class CreditCardserviceImpl implements CreditCardService{
             }
 		return creditcardDtoList;
   }
+
+	@Override
+	public CreditCardDto viewCreditCardById(int userId) {
+		CreditCard creditcard=cardrepo.getCardByuserId(userId);
+		if(creditcard==null)
+			throw new InvalidTransactionIdException();
+		  CreditCardDto cardDto= new CreditCardDto();
+		   cardDto.setCardNo(creditcard.getCardNo());
+		   cardDto.setCardType(creditcard.getCardType());
+		   cardDto.setCvv(creditcard.getCvv());
+		   cardDto.setExpiryDate(creditcard.getExpiryDate());
+		 // cardDto.setUserId(creditcard.getUserId());
+		    return cardDto;
+	
+	}
+
+	
  }
 	
 	

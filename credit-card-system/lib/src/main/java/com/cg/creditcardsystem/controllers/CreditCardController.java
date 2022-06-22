@@ -23,10 +23,10 @@ public class CreditCardController {
  CreditCardserviceImpl service;
 
       
-      @GetMapping("/id/{userId}")
-      public ResponseEntity<CreditCard> getCardByUser(@PathVariable int userId){
-    	  CreditCard card=service.getCardById(userId);
-		return new ResponseEntity<CreditCard>(card,HttpStatus.OK);
+      @GetMapping("/card/{cardNo}")
+      public ResponseEntity<CreditCardDto> getCardByUserId(@PathVariable int Userid){
+    	  CreditCardDto cardDto=service.viewCreditCardById(Userid);
+		return new ResponseEntity<CreditCardDto>(cardDto,HttpStatus.OK);
     	  
       }
       

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.creditcardsystem.dto.CreditCardDto;
+import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.service.CreditCardserviceImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -36,7 +37,7 @@ public class AdminController {
 	      @DeleteMapping("{cardNo}")
 	      public ResponseEntity<String>deleteCreditCard(@PathVariable long cardNo){
 	    	  service.deleteCreditCard(cardNo);
-	    	  return new ResponseEntity<String>("deleted"+cardNo,HttpStatus.OK);
+	    	  return new ResponseEntity<String>("deleted",HttpStatus.OK);
 	      }
-	     	      
+	     
 }

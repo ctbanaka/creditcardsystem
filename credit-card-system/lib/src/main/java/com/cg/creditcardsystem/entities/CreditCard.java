@@ -54,5 +54,5 @@ public class CreditCard {
 	public void setUserId(Registration userId) {
 		this.userId = userId;
 	}
-	
+		
 }
