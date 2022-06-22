@@ -40,7 +40,7 @@ public class TransactionServiceImpl implements TransactionService {
 		else if(!(card.getCardNo()==cardNo)) {
 		throw new InvalidCardDetailsException();
 		}
-		List<Transaction> translist= transrepo.getTransactionsByCardNo(cardNo);
+		List<Transaction> translist= transrepo.findAll();
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
 		for(Transaction trans:translist) {
 			TransactionDto transdto=new TransactionDto();
@@ -56,13 +56,18 @@ public class TransactionServiceImpl implements TransactionService {
 	}
 
 	@Override
-	public Transaction viewTransactionById(int transactionId) {
+	public TransactionDto viewTransactionById(int transactionId) {
 		Transaction transaction=transrepo.getTransactionById(transactionId);
 		if(transaction==null || !(transaction.getTransactionId()==transactionId))
 			throw new InvalidTransactionIdException();
-		
-		
-		return transaction;
+		  TransactionDto transDto= new TransactionDto();
+		   transDto.setCardNo(transaction.getCard().getCardNo());
+		   transDto.setTransactionDate(transaction.getTransactionDate());
+		   transDto.setDescription(transaction.getDescription());
+		   transDto.setRedeemPoints(transaction.getRedeemPoints());
+		   transDto.setDebitedBalance(transaction.getDebitedBalance());
+		    
+		return transDto;
 	}
 
  

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.creditcardsystem.dto.TransactionDto;
-import com.cg.creditcardsystem.entities.Transaction;
 import com.cg.creditcardsystem.service.TransactionServiceImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -31,7 +30,7 @@ public class TransactionController {
 	
    }
   
-   @GetMapping("/{cardno}")
+   @GetMapping("/{cardNo}")
    public ResponseEntity<List<TransactionDto>> viewAllTransactions(@PathVariable long cardNo){
 	  List<TransactionDto> translist= transservice.viewAllTransactions(cardNo);
 	return new ResponseEntity<List<TransactionDto>>(translist,HttpStatus.OK);
@@ -39,9 +38,9 @@ public class TransactionController {
  }
 
    @GetMapping("/card/{transactionid}")
-   public ResponseEntity <Transaction> viewTransactionById(int transactionId){
-	   Transaction trans=transservice.viewTransactionById(transactionId);
-	return new ResponseEntity<Transaction>(trans,HttpStatus.OK);
+   public ResponseEntity <TransactionDto> viewTransactionById(int transactionId){
+	   TransactionDto trans=transservice.viewTransactionById(transactionId);
+	return new ResponseEntity<TransactionDto>(trans,HttpStatus.OK);
 	   
    }
 }

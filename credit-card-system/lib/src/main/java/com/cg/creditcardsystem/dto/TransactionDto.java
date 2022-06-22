@@ -45,12 +45,13 @@ public class TransactionDto {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	@Override
 	public String toString() {
 		return "TransactionDto [cardNo=" + cardNo + ", transactionDate=" + transactionDate + ", description="
 				+ description + ", debitedBalance=" + debitedBalance + ", redeemPoints=" + redeemPoints + "]";
 	}
+
+	 
 	 
 	
  
