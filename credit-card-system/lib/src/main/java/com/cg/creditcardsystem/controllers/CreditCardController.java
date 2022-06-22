@@ -24,17 +24,13 @@ public class CreditCardController {
 
       
       @GetMapping("/card/{cardNo}")
-      public ResponseEntity<CreditCardDto> getCardByUserId(@PathVariable int Userid){
-    	  CreditCardDto cardDto=service.viewCreditCardById(Userid);
+      public ResponseEntity<CreditCardDto> getCardByCardNo(@PathVariable long cardNo){
+    	  CreditCardDto cardDto=service.viewCreditCardByCardNo(cardNo);
 		return new ResponseEntity<CreditCardDto>(cardDto,HttpStatus.OK);
     	  
       }
       
-      @DeleteMapping("{cardNo}")
-      public ResponseEntity<String>deleteCreditCard(@PathVariable long cardNo){
-    	  service.deleteCreditCard(cardNo);
-    	  return new ResponseEntity<String>("deleted",HttpStatus.OK);
-      }
+     
       
       
       
