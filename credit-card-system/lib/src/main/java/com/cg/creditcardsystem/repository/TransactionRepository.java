@@ -10,8 +10,8 @@ import com.cg.creditcardsystem.entities.Transaction;
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 
-
-
+	@Query(value="select trans from Transaction trans where trans.card.cardNo=?1")
+   List<Transaction> getTransactionByCardNo(long cardNo);
  
  
 	

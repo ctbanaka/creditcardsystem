@@ -32,7 +32,7 @@ public class Transaction {
      private double debitedBalance;
      
      @Column(name="redeempoints",length=10)
-     private int redeemPoints;
+     private double redeemPoints;
      
      @ManyToOne
      @JoinColumn(name="card_number")
@@ -71,11 +71,13 @@ public class Transaction {
 	}
 
 	 
-	public int getRedeemPoints() {
+	 
+
+	public double getRedeemPoints() {
 		return redeemPoints;
 	}
 
-	public void setRedeemPoints(int redeemPoints) {
+	public void setRedeemPoints(double redeemPoints) {
 		this.redeemPoints = redeemPoints;
 	}
 
