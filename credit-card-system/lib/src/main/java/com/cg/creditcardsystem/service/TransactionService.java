@@ -7,7 +7,7 @@ import com.cg.creditcardsystem.entities.Transaction;
 public interface TransactionService {
 	int addTransaction(TransactionDto transdto);
 	List<TransactionDto> viewAllTransactions(long cardNo);
-	Transaction viewTransactionById(int transactionId);
+	TransactionDto viewTransactionById(int transactionId);
 
 
 }
