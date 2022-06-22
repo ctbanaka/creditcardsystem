@@ -17,5 +17,9 @@ public interface CreditCardRepository extends JpaRepository<CreditCard, Long> {
 void deleteByCardNo(long cardNo);
 
 
-		
+	
 }
+
+
+		
+
