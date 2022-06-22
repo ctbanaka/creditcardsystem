@@ -44,13 +44,13 @@ public class AddressController {
 	   
    }
    
-   @DeleteMapping
+   @DeleteMapping("{addressId}")
    public ResponseEntity<String> deleteAddress(@PathVariable int addressId){
    	addrservice.deleteAddressById(addressId);
    	return new ResponseEntity<String>("deleted",HttpStatus.OK);
    }
    @PutMapping
-   public ResponseEntity<String> editAddress(@RequestBody Address addr ){
+   public ResponseEntity<String> editAddress(@RequestBody AddressDto addr ){
    	addrservice.updateAddress(addr);
    	return new ResponseEntity<String>("updated",HttpStatus.OK);
    }

@@ -2,6 +2,7 @@ package com.cg.creditcardsystem.dto;
 
 public class AddressDto {
    private int userId;
+   private int addressId;
    private String city;
    private String state;
    private int pinCode;
@@ -29,10 +30,18 @@ public int getPinCode() {
 public void setPinCode(int pinCode) {
 	this.pinCode = pinCode;
 }
+public int getAddressId() {
+	return addressId;
+}
+public void setAddressId(int addressId) {
+	this.addressId = addressId;
+}
 @Override
 public String toString() {
-	return "AddressDto [userId=" + userId + ", city=" + city + ", state=" + state + ", pinCode=" + pinCode + "]";
+	return "AddressDto [userId=" + userId + ", addressId=" + addressId + ", city=" + city + ", state=" + state
+			+ ", pinCode=" + pinCode + "]";
 }
+
    
    
 }

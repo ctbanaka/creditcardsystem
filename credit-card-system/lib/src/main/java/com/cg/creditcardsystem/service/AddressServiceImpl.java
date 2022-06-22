@@ -39,11 +39,11 @@ public class AddressServiceImpl implements AddressService {
 		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
 		AddressDto addressdto=new AddressDto();
 		 for(Address addr:address) {
-			
+			addressdto.setAddressId(addr.getAddressId());
 			addressdto.setCity(addr.getCity());
 			addressdto.setState(addr.getState());
 			addressdto.setPinCode(addr.getPinCode());
-			addressdto.setUserId(addr.getUserId().getUserId());
+		//	addressdto.setUserId(addr.getUserId());
 			addresslist.add(addressdto);
 			}
 		return addresslist;
@@ -67,10 +67,17 @@ public class AddressServiceImpl implements AddressService {
 		
 	}
 
+
 	@Override
-	public void updateAddress(Address addr) {
-     adrsrepo.save(addr);
-		
+	public void updateAddress(AddressDto addrdto) {
+		Address addr=adrsrepo.getById(addrdto.getAddressId());
+		  
+		   Registration reg= regrepo.getById(addrdto.getUserId());
+		      addr.setCity(addrdto.getCity());
+		      addr.setState(addrdto.getState());
+		      addr.setPinCode(addrdto.getPinCode());
+		      addr.setUserId(reg); 
+		adrsrepo.save(addr);
 	}
    
 }

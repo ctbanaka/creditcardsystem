@@ -9,5 +9,5 @@ public interface AddressService {
 	List<AddressDto> viewAllAddress();
 	Address getAddress(int userId);
 	void deleteAddressById(int addressId);
-	void updateAddress(Address addr);
+	void updateAddress(AddressDto addrdto);
 }

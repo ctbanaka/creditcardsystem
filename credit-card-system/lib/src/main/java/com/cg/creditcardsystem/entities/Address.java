@@ -17,7 +17,7 @@ public class Address {
 	@Column(name="address_id")
 	private int addressId;
 	@OneToOne
-	@JoinColumn(name="userid")
+	@JoinColumn(name="userid",nullable=false )
 	private Registration userId;
 	@Column(name="city",length=30)
     private String city;
