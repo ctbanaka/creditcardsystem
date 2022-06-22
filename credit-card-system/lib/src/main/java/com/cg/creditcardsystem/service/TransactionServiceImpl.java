@@ -1,6 +1,7 @@
 package com.cg.creditcardsystem.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,8 @@ public class TransactionServiceImpl implements TransactionService {
 		transaction.setCard(card);
 		transaction.setDescription(transdto.getDescription());
 		transaction.setDebitedBalance(transdto.getDebitedBalance());
-		transaction.setTransactionDate(transdto.getTransactionDate());
-		transaction.setRedeemPoints(transdto.getRedeemPoints());
+		transaction.setTransactionDate(new Date());
+		transaction.setRedeemPoints(transdto.getDebitedBalance()*0.03);
 	    transrepo.save(transaction);
 		return transaction.getTransactionId();
 	}
@@ -40,7 +41,7 @@ public class TransactionServiceImpl implements TransactionService {
 		else if(!(card.getCardNo()==cardNo)) {
 		throw new InvalidCardDetailsException();
 		}
-		List<Transaction> translist= transrepo.findAll();
+		List<Transaction> translist= transrepo.getTransactionByCardNo(cardNo);
 		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
 		for(Transaction trans:translist) {
 			TransactionDto transdto=new TransactionDto();

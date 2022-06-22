@@ -37,8 +37,8 @@ public class TransactionController {
 	   
  }
 
-   @GetMapping("/card/{transactionid}")
-   public ResponseEntity <TransactionDto> viewTransactionById(int transactionId){
+   @GetMapping("/card/{transactionId}")
+   public ResponseEntity <TransactionDto> viewTransactionById(@ PathVariable int transactionId){
 	   TransactionDto trans=transservice.viewTransactionById(transactionId);
 	return new ResponseEntity<TransactionDto>(trans,HttpStatus.OK);
 	   
