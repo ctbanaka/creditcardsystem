@@ -13,7 +13,7 @@ public interface CreditCardService {
 	long addCreditCard(CreditCardDto carddto);  
     List<CreditCardDto> viewAllCards();
     void deleteCreditCard(long cardNo);
-    CreditCardDto viewCreditCardById(int userId);
+    CreditCardDto viewCreditCardByCardNo(long cardNo);
     
 
 }
