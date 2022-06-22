@@ -64,10 +64,9 @@ public class CreditCardserviceImpl implements CreditCardService{
   }
 
 	@Override
-	public CreditCardDto viewCreditCardById(int userId) {
-		CreditCard creditcard=cardrepo.getCardByuserId(userId);
-		if(creditcard==null)
-			throw new InvalidTransactionIdException();
+	public CreditCardDto viewCreditCardByCardNo(long cardNo) {
+		CreditCard creditcard=cardrepo.getCardBycardNo(cardNo);
+		
 		  CreditCardDto cardDto= new CreditCardDto();
 		   cardDto.setCardNo(creditcard.getCardNo());
 		   cardDto.setCardType(creditcard.getCardType());
