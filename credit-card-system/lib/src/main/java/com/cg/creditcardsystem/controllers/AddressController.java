@@ -38,9 +38,9 @@ public class AddressController {
    }
 
    @GetMapping("/id/{userId}")
-   public ResponseEntity<Address> getAddressByUser(int userId){
-	   Address address= addrservice.getAddress(userId);
-	return new ResponseEntity<Address>(address,HttpStatus.OK);
+   public ResponseEntity<AddressDto> getAddressByUser(@PathVariable int userId){
+	   AddressDto address= addrservice.getAddress(userId);
+	return new ResponseEntity<AddressDto>(address,HttpStatus.OK);
 	   
    }
    

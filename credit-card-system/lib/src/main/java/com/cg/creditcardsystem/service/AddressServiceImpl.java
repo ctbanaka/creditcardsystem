@@ -46,9 +46,9 @@ public class AddressServiceImpl implements AddressService {
 			addressdto.setState(addr.getState());
 			addressdto.setPinCode(addr.getPinCode());
 			addressdto.setUserId(addr.getUserId().getUserId());
-			System.out.println(addressdto);
+
 			addresslist.add(addressdto);
-			System.out.println(addresslist);
+			
 			}
 		return addresslist;
 	}
@@ -56,13 +56,19 @@ public class AddressServiceImpl implements AddressService {
 
 
 	@Override
-	public Address getAddress(int userId) {
+	public AddressDto getAddress(int userId) {
 	 Address addrs=adrsrepo.getAddress(userId);
 	  if(addrs==null) {
-		  throw new AddressNotFoundExcetpion();
-		  
+		  throw new AddressNotFoundExcetpion();	  
 	  }
-		return addrs;
+	  AddressDto addrDto= new AddressDto();
+	  
+	  addrDto.setAddressId(addrs.getUserId().getUserId());
+	  addrDto.setAddressId(addrs.getAddressId());
+	  addrDto.setCity(addrs.getCity());
+	  addrDto.setPinCode(addrs.getPinCode());
+	  addrDto.setState(addrs.getState());
+	  return addrDto;
 	}
 
 	@Override

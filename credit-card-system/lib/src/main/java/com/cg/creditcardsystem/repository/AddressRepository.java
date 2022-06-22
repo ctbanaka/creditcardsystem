@@ -8,6 +8,6 @@ import com.cg.creditcardsystem.entities.Address;
 @Repository
 public interface AddressRepository extends JpaRepository <Address,Integer>{
 	
- @Query(value="select addr from Address addr where addr.userId=?1")
+ @Query(value="select addr from Address addr where addr.userId.userId=?1")
  Address getAddress(int UserId);
 }
