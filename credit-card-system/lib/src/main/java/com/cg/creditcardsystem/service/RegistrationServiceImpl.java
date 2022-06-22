@@ -27,8 +27,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public List<RegistrationDto> viewAllUserDetails() {
 		List<Registration> reglist = regrepo.findAll();
 		ArrayList<RegistrationDto> registerList =new ArrayList<RegistrationDto>();
-		RegistrationDto regdto= new RegistrationDto();
 		 for(Registration reg: reglist) {
+			 RegistrationDto regdto= new RegistrationDto();
 			 regdto.setUserId(reg.getUserId());
 			 regdto.setFirstName(reg.getFirstName());
 			 regdto.setLastName(reg.getLastName());
