@@ -48,13 +48,20 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	@Override
 	public void updateUserDetails(Registration reg) {
-		regrepo.save(reg);
+		Registration regstr=regrepo.getById(reg.getUserId());
+		regstr.setFirstName(reg.getFirstName());
+		regstr.setLastName(reg.getLastName());
+		regstr.setDateOfBirth(reg.getDateOfBirth());
+		regstr.setEmail(reg.getEmail());
+		regstr.setPhoneNo(reg.getPhoneNo());
+		regstr.setPassword(reg.getPassword());
+		regrepo.save(regstr);
 		
 	}
 
 	@Override
-	public Optional<Registration> getRegById(int userid) {
-		Optional<Registration> reg = regrepo.findById(userid);
+	public Registration getUserById(int userid) {
+		Registration reg = regrepo.getById(userid);
 		return reg;
 	}
 

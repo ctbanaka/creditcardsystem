@@ -14,6 +14,6 @@ public interface RegistrationService {
      List<RegistrationDto> viewAllUserDetails();
      void deleteUser(int userid);
      void updateUserDetails(Registration reg);
-     Optional<Registration> getRegById(int userid) throws UserNotFoundException;
+     Registration getUserById(int userid) throws UserNotFoundException;
 }
 

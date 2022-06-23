@@ -35,7 +35,7 @@ public class RegistrationController {
     	List<RegistrationDto> reglist = service.viewAllUserDetails();
     	return new ResponseEntity<List<RegistrationDto>>(reglist,HttpStatus.OK);
     }
-    @DeleteMapping("/id/{userid}")
+    @DeleteMapping("/{userid}")
     public ResponseEntity<String> deleteRegistration(@PathVariable int userid){
     	service.deleteUser(userid);
     	return new ResponseEntity<String>("deleted",HttpStatus.OK);
