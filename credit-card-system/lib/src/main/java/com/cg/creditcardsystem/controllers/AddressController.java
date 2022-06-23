@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cg.creditcardsystem.dto.AddressDto;
+import com.cg.creditcardsystem.dto.AddressDto2;
 import com.cg.creditcardsystem.entities.Address;
 import com.cg.creditcardsystem.service.AddressServiceImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -50,7 +51,7 @@ public class AddressController {
    	return new ResponseEntity<String>("deleted",HttpStatus.OK);
    }
    @PutMapping
-   public ResponseEntity<String> editAddress(@RequestBody AddressDto addr ){
+   public ResponseEntity<String> editAddress(@RequestBody AddressDto2 addr ){
    	addrservice.updateAddress(addr);
    	return new ResponseEntity<String>("updated",HttpStatus.OK);
    }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cg.creditcardsystem.dto.AddressDto;
+import com.cg.creditcardsystem.dto.AddressDto2;
 import com.cg.creditcardsystem.entities.Address;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.exceptions.AddressNotFoundExcetpion;
@@ -20,7 +21,7 @@ public class AddressServiceImpl implements AddressService {
   
 	@Override
 	public int addAddress(AddressDto addrdto) {
-	   Registration reg= regrepo.getById(addrdto.getUserId());
+	  Registration reg= regrepo.getById(addrdto.getUserId());
 	   
       Address addr= new Address();
       addr.setUserId(reg);
@@ -79,14 +80,14 @@ public class AddressServiceImpl implements AddressService {
 
 
 	@Override
-	public void updateAddress(AddressDto addrdto) {
+	public void updateAddress(AddressDto2 addrdto) {
 		Address addr=adrsrepo.getById(addrdto.getAddressId());
 		  
-		   Registration reg= regrepo.getById(addrdto.getUserId());
+		  // Registration reg= regrepo.getById(addrdto.getUserId());
 		      addr.setCity(addrdto.getCity());
 		      addr.setState(addrdto.getState());
 		      addr.setPinCode(addrdto.getPinCode());
-		      addr.setUserId(reg); 
+		  //    addr.setUserId(reg); 
 		adrsrepo.save(addr);
 	}
    

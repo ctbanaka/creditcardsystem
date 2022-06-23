@@ -1,7 +1,7 @@
 package com.cg.creditcardsystem.dto;
 
 public class AddressDto {
-   private int userId;
+  private int userId;
    private int addressId;
    private String city;
    private String state;
@@ -42,6 +42,5 @@ public String toString() {
 			+ ", pinCode=" + pinCode + "]";
 }
 
-   
    
 }
