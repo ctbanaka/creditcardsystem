@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cg.creditcardsystem.dto.TransactionDateDto;
 import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.service.TransactionServiceImpl;
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -43,4 +44,10 @@ public class TransactionController {
 	return new ResponseEntity<TransactionDto>(trans,HttpStatus.OK);
 	   
    }
+//   
+//   @GetMapping("/bydate")
+//   public ResponseEntity <List<TransactionDto>> viewByDate(@RequestBody TransactionDateDto transdto){
+//	   List<TransactionDto> translist= transservice.viewAllTransactionByDate(transdto);
+//	   return new ResponseEntity<List<TransactionDto>>(translist,HttpStatus.OK);
+//   }
 }
