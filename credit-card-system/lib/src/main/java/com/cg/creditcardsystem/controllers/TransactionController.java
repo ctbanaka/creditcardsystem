@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cg.creditcardsystem.dto.TransactionDateDto;
 import com.cg.creditcardsystem.dto.TransactionDto;
 import com.cg.creditcardsystem.service.TransactionServiceImpl;
+import com.cg.creditcardsystem.utils.ApiResponse;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/transaction")
@@ -25,9 +26,11 @@ public class TransactionController {
    TransactionServiceImpl transservice;
    
    @PostMapping
-   public ResponseEntity<String> addTransaction(@RequestBody TransactionDto transdto){
+   public ResponseEntity<ApiResponse> addTransaction(@RequestBody TransactionDto transdto){
+	   ApiResponse response=new ApiResponse();
+	   response.setMessage("paid successfully");
 	   transservice.addTransaction(transdto);
-	return new ResponseEntity<String>("transaction inserted", HttpStatus.OK);
+	return new ResponseEntity<ApiResponse>(response, HttpStatus.OK);
 	
    }
   
@@ -44,10 +47,5 @@ public class TransactionController {
 	return new ResponseEntity<TransactionDto>(trans,HttpStatus.OK);
 	   
    }
-//   
-//   @GetMapping("/bydate")
-//   public ResponseEntity <List<TransactionDto>> viewByDate(@RequestBody TransactionDateDto transdto){
-//	   List<TransactionDto> translist= transservice.viewAllTransactionByDate(transdto);
-//	   return new ResponseEntity<List<TransactionDto>>(translist,HttpStatus.OK);
-//   }
+ 
 }
