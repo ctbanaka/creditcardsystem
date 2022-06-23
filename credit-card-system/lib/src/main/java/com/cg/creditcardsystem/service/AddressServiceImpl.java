@@ -40,7 +40,7 @@ public class AddressServiceImpl implements AddressService {
 		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
 	
 		 for(Address addr:address) {
-				AddressDto addressdto=new AddressDto();
+		    AddressDto addressdto=new AddressDto();
 			addressdto.setAddressId(addr.getAddressId());
 			addressdto.setCity(addr.getCity());
 			addressdto.setState(addr.getState());
