@@ -18,7 +18,6 @@ public interface TransactionRepository extends JpaRepository<Transaction,Long> {
 	@Query(value="select trans from Transaction trans where trans.transactionId=?1")
 	Transaction getTransactionById(int transactionId);
 	
-//	@Query(value="select trans from Transaction trans where trans.transactionDate between trans.transactionDate=?1 ?2 and trans.card.cardNo=?3")
-//	List<Transaction> getByDate(Date startDate,Date endDate, long CardNo);
+ 
 }
    

@@ -27,9 +27,9 @@ public class TransactionController {
    
    @PostMapping
    public ResponseEntity<ApiResponse> addTransaction(@RequestBody TransactionDto transdto){
+	   int transactionId=transservice.addTransaction(transdto);
 	   ApiResponse response=new ApiResponse();
-	   response.setMessage("paid successfully");
-	   transservice.addTransaction(transdto);
+	   response.setMessage("paid successfully your reference id is "+transactionId);
 	return new ResponseEntity<ApiResponse>(response, HttpStatus.OK);
 	
    }

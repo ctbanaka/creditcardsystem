@@ -10,7 +10,7 @@ public interface TransactionService {
 	int addTransaction(TransactionDto transdto);
 	List<TransactionDto> viewAllTransactions(long cardNo);
 	TransactionDto viewTransactionById(int transactionId);
-	//List<TransactionDto> viewAllTransactionByDate(TransactionDateDto transDateDto);
+	 
 
 
 }
