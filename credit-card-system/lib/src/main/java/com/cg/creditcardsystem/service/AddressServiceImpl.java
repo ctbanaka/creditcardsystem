@@ -36,15 +36,19 @@ public class AddressServiceImpl implements AddressService {
 	public List<AddressDto> viewAllAddress() {
 		
 		List<Address> address =adrsrepo.findAll();
+		System.out.println(address);
 		ArrayList<AddressDto>addresslist=new ArrayList<AddressDto>();
-		AddressDto addressdto=new AddressDto();
+	
 		 for(Address addr:address) {
-			
+				AddressDto addressdto=new AddressDto();
+			addressdto.setAddressId(addr.getAddressId());
 			addressdto.setCity(addr.getCity());
 			addressdto.setState(addr.getState());
 			addressdto.setPinCode(addr.getPinCode());
 			addressdto.setUserId(addr.getUserId().getUserId());
+
 			addresslist.add(addressdto);
+			
 			}
 		return addresslist;
 	}
@@ -52,13 +56,19 @@ public class AddressServiceImpl implements AddressService {
 
 
 	@Override
-	public Address getAddress(int userId) {
+	public AddressDto getAddress(int userId) {
 	 Address addrs=adrsrepo.getAddress(userId);
 	  if(addrs==null) {
-		  throw new AddressNotFoundExcetpion();
-		  
+		  throw new AddressNotFoundExcetpion();	  
 	  }
-		return addrs;
+	  AddressDto addrDto= new AddressDto();
+	  
+	  addrDto.setAddressId(addrs.getUserId().getUserId());
+	  addrDto.setAddressId(addrs.getAddressId());
+	  addrDto.setCity(addrs.getCity());
+	  addrDto.setPinCode(addrs.getPinCode());
+	  addrDto.setState(addrs.getState());
+	  return addrDto;
 	}
 
 	@Override
@@ -67,10 +77,17 @@ public class AddressServiceImpl implements AddressService {
 		
 	}
 
+
 	@Override
-	public void updateAddress(Address addr) {
-     adrsrepo.save(addr);
-		
+	public void updateAddress(AddressDto addrdto) {
+		Address addr=adrsrepo.getById(addrdto.getAddressId());
+		  
+		   Registration reg= regrepo.getById(addrdto.getUserId());
+		      addr.setCity(addrdto.getCity());
+		      addr.setState(addrdto.getState());
+		      addr.setPinCode(addrdto.getPinCode());
+		      addr.setUserId(reg); 
+		adrsrepo.save(addr);
 	}
    
 }

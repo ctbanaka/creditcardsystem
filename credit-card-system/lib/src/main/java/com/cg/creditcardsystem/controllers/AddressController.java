@@ -38,19 +38,19 @@ public class AddressController {
    }
 
    @GetMapping("/id/{userId}")
-   public ResponseEntity<Address> getAddressByUser(int userId){
-	   Address address= addrservice.getAddress(userId);
-	return new ResponseEntity<Address>(address,HttpStatus.OK);
+   public ResponseEntity<AddressDto> getAddressByUser(@PathVariable int userId){
+	   AddressDto address= addrservice.getAddress(userId);
+	return new ResponseEntity<AddressDto>(address,HttpStatus.OK);
 	   
    }
    
-   @DeleteMapping
+   @DeleteMapping("{addressId}")
    public ResponseEntity<String> deleteAddress(@PathVariable int addressId){
    	addrservice.deleteAddressById(addressId);
    	return new ResponseEntity<String>("deleted",HttpStatus.OK);
    }
    @PutMapping
-   public ResponseEntity<String> editAddress(@RequestBody Address addr ){
+   public ResponseEntity<String> editAddress(@RequestBody AddressDto addr ){
    	addrservice.updateAddress(addr);
    	return new ResponseEntity<String>("updated",HttpStatus.OK);
    }
