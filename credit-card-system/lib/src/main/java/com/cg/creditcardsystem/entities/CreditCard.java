@@ -13,6 +13,7 @@ import javax.persistence.Table;
 public class CreditCard {
 	
 	@Id
+	
 	@Column(name="card_number",length=16, unique=true)
 	private long cardNo;
 	@Column(name="cardtype",length=20,nullable=false)
