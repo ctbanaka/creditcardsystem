@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cg.creditcardsystem.dto.RegistrationDto;
 import com.cg.creditcardsystem.entities.Registration;
 import com.cg.creditcardsystem.service.RegistrationServiceImpl;
+import com.cg.creditcardsystem.utils.ApiResponse;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/register")
@@ -26,9 +27,11 @@ public class RegistrationController {
      
      
     @PostMapping
- 	public ResponseEntity<String> userRegistration(@RequestBody Registration reg){
- 		service.addUser(reg);
- 		return new ResponseEntity<String>("user added", HttpStatus.OK);
+ 	public ResponseEntity<ApiResponse> userRegistration(@RequestBody Registration reg){
+ 		int userid=service.addUser(reg);
+ 		 ApiResponse response=new ApiResponse();
+ 		 response.setMessage("registration success your id"+userid);
+ 		return new ResponseEntity<ApiResponse>(response, HttpStatus.OK);
  	}
     @GetMapping
     public ResponseEntity<List<RegistrationDto>> getAllRegistration(){

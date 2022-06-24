@@ -17,10 +17,11 @@ public class RegistrationServiceImpl implements RegistrationService {
 	RegistrationRepository regrepo;
 
 	@Override
-	public void addUser(Registration reg) {
+	public int addUser(Registration reg) {
 		@SuppressWarnings("unused")
 		Optional<Registration> register = regrepo.findById(reg.getUserId());
 		regrepo.save(reg);
+		return  reg.getUserId();
 		}
 
 	@Override

@@ -10,7 +10,7 @@ import com.cg.creditcardsystem.exceptions.UserAlreadyExistException;
 import com.cg.creditcardsystem.exceptions.UserNotFoundException;
 
 public interface RegistrationService {
-     void addUser(Registration reg) throws UserAlreadyExistException;
+     int addUser(Registration reg) throws UserAlreadyExistException;
      List<RegistrationDto> viewAllUserDetails();
      void deleteUser(int userid);
      void updateUserDetails(Registration reg);
