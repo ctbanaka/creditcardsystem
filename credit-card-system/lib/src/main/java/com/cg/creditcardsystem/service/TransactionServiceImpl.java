@@ -71,22 +71,7 @@ public class TransactionServiceImpl implements TransactionService {
 		    
 		return transDto;
 	}
-//	@Override
-//	public List<TransactionDto> viewAllTransactionByDate(TransactionDateDto transDto) {
-//		List<Transaction> transactions= transrepo.getByDate(transDto.getStartDate(),transDto.getEndDate(), transDto.getCardNo());
-//		
-//		List<TransactionDto> translistdto= new ArrayList<TransactionDto>();
-//		for(Transaction trans:transactions) {
-//			TransactionDto transdto=new TransactionDto();
-//			transdto.setCardNo(trans.getCard().getCardNo());
-//			transdto.setDebitedBalance(trans.getDebitedBalance());
-//			transdto.setDescription(trans.getDescription());
-//			transdto.setTransactionDate(trans.getTransactionDate());
-//			transdto.setRedeemPoints(trans.getRedeemPoints());
-//			translistdto.add(transdto);
-//		}
-//		return translistdto;
-//	}
+ 
 
  
 	
