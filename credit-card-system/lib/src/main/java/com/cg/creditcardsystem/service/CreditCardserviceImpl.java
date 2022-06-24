@@ -34,6 +34,7 @@ public class CreditCardserviceImpl implements CreditCardService{
 		card.setCardType(carddto.getCardType());
 		card.setCvv(carddto.getCvv());
 		card.setExpiryDate(carddto.getExpiryDate());
+		//card.setUserId(carddto.getUserId);
 		cardrepo.save(card);
 		return card.getCardNo();
 			
